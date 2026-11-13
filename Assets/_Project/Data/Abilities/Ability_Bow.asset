@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3f9b44403c0974f9d4d70605217fec, type: 3}
+  m_Name: Ability_Bow
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Core.AbilityDefinition
+  _type: 2
+  _displayName: Bow
+  _icon: {fileID: 0}
+  _accessoryPrefab: {fileID: 0}
+  _damage: 1
+  _cooldown: 0.6
+  _range: 25
+  _projectilePrefab: {fileID: 0}
+  _projectileSpeed: 20
+  _useSfx: {fileID: 0}
+  _useVfx: {fileID: 0}

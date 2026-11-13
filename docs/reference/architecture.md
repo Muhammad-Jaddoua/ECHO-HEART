@@ -11,7 +11,7 @@ contracts first** (Day 0), working in **prefabs + personal sandbox scenes**, and
 | Template | Universal 3D (URP) |
 | Packages | URP 17.3, Input System 1.20, Cinemachine 3.1.7, ProBuilder 6.1.4, AI Navigation 2.0, Recorder 5.1.8 (gameplay video), uGUI/TextMeshPro, Test Framework, Unity AI Assistant (hosts the Unity MCP for Claude). Removed from template: Plastic SCM (collab-proxy), Visual Scripting, Multiplayer Center |
 | Project settings | Asset Serialization = **Force Text**; Version Control = **Visible Meta Files**; Active Input Handling = Input System; URP assets (`Assets/Settings/PC_RPAsset`, `Mobile_RPAsset`): **Depth Texture ON** (needed by Cartoon FX soft particles). Product name "Echoheart" |
-| Input | `Assets/_Project/Input/EchoheartControls.inputactions` (the template's default action map, moved). Tariq adapts it to our controls: Move, Look, Jump, Attack, **Inhale (hold E)**, **Interact (F)**, **Pause (Esc)** |
+| Input | `Assets/_Project/Input/EchoheartControls.inputactions` (the template's default action map, moved). Tariq adapts it to our controls: Move, Look, Jump, Attack, **Inhale (hold right click)**, **Interact (E)**, **Pause (Esc)** |
 | Repo layout | Unity project at **repo root** (`Assets/`, `Packages/`, `ProjectSettings/` next to `docs/`). The Unity `.gitignore` is root-anchored. |
 
 ## Folder layout
@@ -99,7 +99,7 @@ namespace Echoheart.Core {
       event Action<int,int> CollectiblesChanged;        // collected, total
       event Action<int,int> BossHealthChanged; event Action BossEncounterStarted; event Action BossDefeated;
       event Action PlayerDied; event Action<RetryScope> RetryRequested; event Action GameCompleted;
-      event Action<string> PromptChanged;               // "Hold E to inhale", "" = hide
+      event Action<string> PromptChanged;               // "Hold right click to inhale", "" = hide
   }
 }
 ```

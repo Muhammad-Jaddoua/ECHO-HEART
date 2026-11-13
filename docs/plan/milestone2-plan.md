@@ -40,7 +40,7 @@ Shared: playtesting, docs, PR reviews (everyone reviews at least one PR per day)
 
 **Tariq:** branch `feature/2-player-movement`. In `Sandbox_Tariq`, replace the `TestPlayer` capsule with a real `Player`
 prefab (CharacterController + `PlayerMotor` + Cinemachine camera). Adapt `EchoheartControls.inputactions` to our controls.
-Then `feature/3-inhale`: hold E against the `DummyInhalable` cubes (they already grant Sword/Bow/Fire).
+Then `feature/3-inhale`: hold right click against the `DummyInhalable` cubes (they already grant Sword/Bow/Fire).
 
 **Muhammad:** branch `feature/4-health-attacks`. In `Sandbox_Muhammad`, hit the `TrainingDummy` with a Sword hit box,
 then the shared `Projectile` for Bow/Fire. Then `feature/7-enemy-fsm` with an `EnemyDefinition` ScriptableObject.

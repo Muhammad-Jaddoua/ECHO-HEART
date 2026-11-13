@@ -26,8 +26,8 @@ rewards, and defeats the Corrupted Guardian to restore the Island Heart.
 | Mouse | Camera |
 | Space | Jump |
 | Left click | Attack with current power |
-| Hold E | Inhale (copy an enemy's power) |
-| F | Interact |
+| Hold right click | Inhale (copy an enemy's power) |
+| E | Interact |
 | Esc | Pause |
 
 ## Setup

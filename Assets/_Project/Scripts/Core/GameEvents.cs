@@ -23,7 +23,7 @@ namespace Echoheart.Core
         public static event Action PlayerDied;
         public static event Action<RetryScope> RetryRequested;
         public static event Action GameCompleted;
-        /// <summary>Context prompt text ("Hold E to inhale"); empty string hides it.</summary>
+        /// <summary>Context prompt text ("Hold right click to inhale"); empty string hides it.</summary>
         public static event Action<string> PromptChanged;
 
         public static void RaiseStateChanged(GameState state) => StateChanged?.Invoke(state);

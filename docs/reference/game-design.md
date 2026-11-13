@@ -28,13 +28,13 @@ inhales creatures to borrow their powers. Explore the clearing, learn the three 
 
 ## Start / success / failure
 - **Start:** New Game → main-area entry, full health, no ability.
-- **Success:** defeat Guardian → interact with Heart (F) → restoration effect → completion screen.
+- **Success:** defeat Guardian → interact with Heart (E) → restoration effect → completion screen.
 - **Failure:** 0 health → Retry. **Falling** damages the player and returns them to safe ground.
 
 ## Core loop
 Explore → meet enemy → inhale or fight → use its power → collect rewards / find secret → continue to boss.
 
-## Inhale (hold E)
+## Inhale (hold right click)
 - Captures **one nearby normal enemy in front** of the spirit after a **short pull**.
 - Checks **range + line of sight**; target does **not** need to be weakened.
 - Capture removes the enemy and **replaces** the held power. Works while holding any power.
@@ -66,14 +66,17 @@ Sword variant = close attack; Bow & Fire variants reuse ranged behaviour. Short 
 
 ## Controls
 
+> Changed from the Phase 1 proposal (which had hold E = inhale, F = interact): **inhale is now hold right click and
+> interact is E**. Mention this in the Phase 2 checkpoint doc.
+
 | Input | Action |
 |---|---|
 | WASD | Move (camera-relative) |
 | Mouse | Orbit camera |
 | Space | Jump |
 | Left click | Attack with current power |
-| Hold E | Inhale |
-| F | Interact (Heart) |
+| Hold right click | Inhale |
+| E | Interact (Heart) |
 | Esc | Pause |
 
 ## Game flow & retry

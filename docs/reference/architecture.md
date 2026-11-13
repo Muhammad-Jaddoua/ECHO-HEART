@@ -109,6 +109,20 @@ HP, optional invulnerability window, remembers the last 32 attack ids (hit-once 
 `Changed(current,max)`, inspector UnityEvents for feedback, `Heal()`, `ResetHealth()`. Used by player, enemies, boss.
 AttackId `0` = untracked damage (fall damage).
 
+**Added contracts (Muhammad, 13 Nov; full log in `docs/reference/contract-changes.md`):**
+- `Core/IAbilityAttack` (`Handles(AbilityType)`, `TryUse(def, origin, aimDirection, owner)`): how `PlayerAbilityHolder`
+  fires the held power. Combat implements it (Sword, Bow/Fire); implementations own the cooldown. Tariq's holder calls
+  `AbilityAttackRunner.TryUse(...)` and never touches the attack classes.
+- **Health never raises `GameEvents` itself.** `Combat/HealthEventRelay` (flag Player or Boss) bridges a `Health` to
+  `PlayerHealthChanged`/`PlayerDied` or `BossHealthChanged`. Put one on the player prefab (Tariq).
+- Boss: `BossBrain.BeginEncounter()` starts the fight (Jehad's arena entrance calls it); the boss raises
+  `BossEncounterStarted` once and `BossDefeated` exactly once, and is **not** `IInhalable` (inhale must ignore
+  colliders without `IInhalable`).
+- Retry: spawners are the `IResettable` for the enemies they own (captured enemies are disabled, so they can't reset
+  themselves). `RetryService` should call `ResetFor` on every `IResettable` found with `FindObjectsByType<MonoBehaviour>(Include)`.
+- Attack layers: player attacks/projectiles on `PlayerAttack`, enemy/boss on `EnemyAttack`. Physics queries ignore the
+  collision matrix, so attacks pass explicit layer masks.
+
 **Sandbox stand-ins** (`Scripts/Testing`): `TrainingDummy` (Health + hit flash + auto-revive), `DummyInhalable`
 (implements `IInhalable`, grants an ability, respawns, errors if captured twice), `TestPlayerMover` (WASD/Space capsule).
 Ability assets: `Data/Abilities/Ability_Sword|Bow|Fire.asset` (placeholder values, tune later).
@@ -118,7 +132,7 @@ Ability assets: `Data/Abilities/Ability_Sword|Bow|Fire.asset` (placeholder value
 | System | Owns | Talks to |
 |---|---|---|
 | PlayerMotor / Camera | CharacterController movement, gravity, ground check, jump, camera-relative input; Cinemachine orbit + deoccluder | Input actions; RetryService (teleport) |
-| PlayerInhale | Hold-E cone/sphere query → range + LoS raycast → pull timer → `IInhalable.OnCaptured()` | `PlayerAbilityHolder.Equip()` |
+| PlayerInhale | Hold-right-click cone/sphere query → range + LoS raycast → pull timer → `IInhalable.OnCaptured()` | `PlayerAbilityHolder.Equip()` |
 | PlayerAbilityHolder | Current `AbilityDefinition`, accessory swap, raises `AbilityChanged` | Combat attacks via `IAbilityAttack` |
 | Combat | `Health`, `MeleeHitbox` (Sword), `Projectile` (sweep with SphereCast between frames, Bow/Fire), attack ids, team filtering | `IDamageable` |
 | Enemy AI | `EnemyBrain` FSM: Idle → Chase → Attack (cooldown) + BeingInhaled + Defeated; NavMeshAgent; `EnemyDefinition` SO; implements `IInhalable`, `IResettable` | Combat, `EnemySpawner` (replenish) |

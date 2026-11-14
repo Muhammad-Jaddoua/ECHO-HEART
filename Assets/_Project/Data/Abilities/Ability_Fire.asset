@@ -19,7 +19,7 @@ MonoBehaviour:
   _damage: 2
   _cooldown: 0.8
   _range: 12
-  _projectilePrefab: {fileID: 0}
-  _projectileSpeed: 20
+  _projectilePrefab: {fileID: 4130279037014329013, guid: 01e15c240dd5e8142b4a25b7f0c77839, type: 3}
+  _projectileSpeed: 14
   _useSfx: {fileID: 0}
   _useVfx: {fileID: 0}

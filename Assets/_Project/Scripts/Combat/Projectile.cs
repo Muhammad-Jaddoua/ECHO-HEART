@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Echoheart.Core;
 using UnityEngine;
 using UnityEngine.Events;
@@ -38,7 +39,28 @@ namespace Echoheart.Combat
         // Guards the "hit once" rule: several colliders can be returned by one cast.
         private bool _resolved;
 
+        // Registry of live projectiles so a retry can clear stray shots (EnemySpawner.ResetFor).
+        private static readonly List<Projectile> s_live = new List<Projectile>();
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics() => s_live.Clear(); // domain reload may be disabled
+
         public int AttackId => _attackId;
+
+        private void OnEnable() => s_live.Add(this);
+
+        private void OnDisable() => s_live.Remove(this);
+
+        /// <summary>Despawns every live projectile (player and enemy). Used when a retry resets the world.</summary>
+        public static void DestroyAllActive()
+        {
+            // Snapshot first: Despawn removes entries through OnDisable.
+            Projectile[] snapshot = s_live.ToArray();
+            s_live.Clear();
+            for (int i = 0; i < snapshot.Length; i++)
+                if (snapshot[i] != null) snapshot[i].Despawn();
+        }
+
         public void Launch(Vector3 direction, float speed, float range, int damage, Team team, GameObject owner, LayerMask hitMask)
         {
             _direction = direction.sqrMagnitude > 0.0001f ? direction.normalized : transform.forward;
@@ -75,7 +97,7 @@ namespace Echoheart.Combat
                 return;
             }
 
-            float step = Mathf.Min(_speed * deltaTime,_range - _travelled);
+            float step = Mathf.Min(_speed * deltaTime, _range - _travelled);
             Vector3 start = transform.position;
 
             // First step starts one radius behind the muzzle so a point-blank target (already

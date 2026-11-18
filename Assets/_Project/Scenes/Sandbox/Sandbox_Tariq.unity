@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2823a99aefdc43af7a503adaa34b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Testing.DummyInhalable
-  _grantedAbility: {fileID: 0}
+  _grantedAbility: {fileID: 11400000, guid: 9ed6550c8b5a0f44f87461d512129dc2, type: 2}
   _respawnDelay: 3
 --- !u!23 &436149602
 MeshRenderer:
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2823a99aefdc43af7a503adaa34b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Testing.DummyInhalable
-  _grantedAbility: {fileID: 0}
+  _grantedAbility: {fileID: 11400000, guid: 9ed6550c8b5a0f44f87461d512129dc2, type: 2}
   _respawnDelay: 3
 --- !u!23 &546103919
 MeshRenderer:
@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2823a99aefdc43af7a503adaa34b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Testing.DummyInhalable
-  _grantedAbility: {fileID: 0}
+  _grantedAbility: {fileID: 11400000, guid: 74e662b27a5acb74f9c4a2a4eefbf640, type: 2}
   _respawnDelay: 3
 --- !u!23 &1564193270
 MeshRenderer:
@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2823a99aefdc43af7a503adaa34b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Testing.DummyInhalable
-  _grantedAbility: {fileID: 0}
+  _grantedAbility: {fileID: 11400000, guid: 5e830cde02d839a43a4b32381f6e722b, type: 2}
   _respawnDelay: 3
 --- !u!23 &1588003669
 MeshRenderer:

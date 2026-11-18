@@ -740,6 +740,8 @@ GameObject:
   - component: {fileID: 4082560693353558238}
   - component: {fileID: 3070784740471273586}
   - component: {fileID: 5502855755384433979}
+  - component: {fileID: 8979216862580038997}
+  - component: {fileID: 2919848118891978208}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -864,6 +866,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.HealthEventRelay
   _mode: 0
+--- !u!114 &8979216862580038997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684720791407114672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4675df5147ec84b42aa041571d6f09aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Player.PlayerAbilityHolder
+  _input: {fileID: 6206018220147004361}
+  _motor: {fileID: 4082560693353558238}
+  _inhale: {fileID: 2919848118891978208}
+  _health: {fileID: 3070784740471273586}
+  _runner: {fileID: 3498002629514701418}
+  _muzzle: {fileID: 8082550844571605446}
+  _accessorySocket: {fileID: 2585531910606538784}
+  _aimCamera: {fileID: 0}
+  _maxAimDistance: 60
+  _aimMask:
+    serializedVersion: 2
+    m_Bits: 9729
+  _onEquipped:
+    m_PersistentCalls:
+      m_Calls: []
+  _onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2919848118891978208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684720791407114672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e659f549a4bd4746a1a6bdb55e7fa5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Player.PlayerInhale
+  _input: {fileID: 6206018220147004361}
+  _motor: {fileID: 4082560693353558238}
+  _holder: {fileID: 8979216862580038997}
+  _health: {fileID: 3070784740471273586}
+  _mouth: {fileID: 8082550844571605446}
+  _aimCamera: {fileID: 0}
+  _range: 5
+  _coneHalfAngle: 45
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  _blockerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  _pullSeconds: 0.6
+  _breakRangeMultiplier: 1.3
+  _swallowDistance: 0.5
+  _refreshInterval: 0.25
+  _onPullStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPullCancelled:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCaptured:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7933751675185152365
 GameObject:
   m_ObjectHideFlags: 0

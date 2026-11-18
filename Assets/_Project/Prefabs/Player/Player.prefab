@@ -348,6 +348,53 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2238769931729693660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4906571626883332469}
+  - component: {fileID: 1714769922173031174}
+  m_Layer: 11
+  m_Name: MeleeHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4906571626883332469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238769931729693660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058409983773521212}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714769922173031174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238769931729693660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cc8c3359053364f9af8933af85610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.MeleeHitbox
+  _activeSeconds: 0.15
+  _size: {x: 1.5, y: 1, z: 2}
+  _offset: {x: 0, y: 0, z: 1}
 --- !u!1 &4148605136262844334
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +485,122 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4573758844409498081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058409983773521212}
+  - component: {fileID: 3498002629514701418}
+  - component: {fileID: 3816322731922139961}
+  - component: {fileID: 8872560012636653350}
+  m_Layer: 8
+  m_Name: Attacks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058409983773521212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573758844409498081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4906571626883332469}
+  m_Father: {fileID: 1762848930369772777}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3498002629514701418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573758844409498081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c2649d1336c07479e202d8b2986fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.AbilityAttackRunner
+  _handlerComponents: []
+--- !u!114 &3816322731922139961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573758844409498081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa26fab37cd0f574a864293687c47e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.SwordAttack
+  _hitbox: {fileID: 1714769922173031174}
+  _width: 1.6
+  _hitMaskOverride:
+    serializedVersion: 2
+    m_Bits: 0
+  _audioSource: {fileID: 0}
+  _onSwing:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8872560012636653350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573758844409498081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7866158b6e765b4daf401a71547d465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.ProjectileAttack
+  _audioSource: {fileID: 0}
+  _onFired:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &6002654439877971013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8082550844571605446}
+  m_Layer: 8
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8082550844571605446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002654439877971013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1762848930369772777}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6123156119193596404
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +723,7 @@ Transform:
   - {fileID: 4332631951719208953}
   - {fileID: 1888696416027047022}
   - {fileID: 4092716641538511527}
+  - {fileID: 2585531910606538784}
   m_Father: {fileID: 1762848930369772777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7684720791407114672
@@ -575,6 +739,7 @@ GameObject:
   - component: {fileID: 6206018220147004361}
   - component: {fileID: 4082560693353558238}
   - component: {fileID: 3070784740471273586}
+  - component: {fileID: 5502855755384433979}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -598,6 +763,8 @@ Transform:
   - {fileID: 1878085491872206485}
   - {fileID: 7561568664356697205}
   - {fileID: 5455551581835694429}
+  - {fileID: 8082550844571605446}
+  - {fileID: 1058409983773521212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &6474769468992491188
@@ -684,3 +851,47 @@ MonoBehaviour:
   _onDied:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5502855755384433979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684720791407114672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe008e0334370dc42a2159149a49dfb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.Combat.HealthEventRelay
+  _mode: 0
+--- !u!1 &7933751675185152365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2585531910606538784}
+  m_Layer: 8
+  m_Name: AccessorySocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2585531910606538784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933751675185152365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1878085491872206485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

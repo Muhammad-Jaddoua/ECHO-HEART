@@ -50,14 +50,15 @@ namespace Echoheart.Combat
             _invulnerableUntil = Time.time + _invulnerabilitySeconds;
 
             Damaged?.Invoke(info);
-            _onDamaged.Invoke();
+            // Null-safe: Health can be added from code (spawners, tests) where inspector UnityEvents were never created.
+            _onDamaged?.Invoke();
             Changed?.Invoke(Current, _maxHealth);
 
             if (IsDead)
             {
                 // Runs once: IsDead blocks every later hit until ResetHealth.
                 Died?.Invoke();
-                _onDied.Invoke();
+                _onDied?.Invoke();
             }
             return true;
         }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac1df5acf6a3494da70fa2eb15b0d4b, type: 3}
+  m_Name: Boss_Guardian
+  m_EditorClassIdentifier: Assembly-CSharp::Echoheart.AI.BossDefinition
+  _maxHealth: 14
+  _moveSpeed: 2
+  _turnSpeed: 180
+  _sightRange: 30
+  _idlePause: 0.6
+  _attackActiveSeconds: 0.25
+  _slamRange: 4
+  _slamTelegraph: 1
+  _slamRadius: 4.5
+  _slamDamage: 2
+  _slamRecover: 1.5
+  _rangedTelegraph: 0.9
+  _rangedDamage: 1
+  _projectilePrefab: {fileID: 3065223283001439896, guid: 9a917dfcfabc25249afce1935c75993d, type: 3}
+  _projectileSpeed: 12
+  _projectileRange: 40
+  _rangedRecover: 1.2
+  _defeatDeactivateDelay: 1.5

@@ -19,6 +19,7 @@ Instructor: Dr. Omar Hammad. Repo: https://github.com/Muhammad-Jaddoua/ECHO-HEAR
 | `docs/reference/assets.md` | Approved free asset sources, license rules, import rules. |
 | `docs/plan/milestone2-plan.md` | Current plan, team split, day-by-day schedule, issue list for Milestone 2. |
 | `CONTRIBUTING.md` | Git/branch/PR/issue workflow (graded!). |
+| `docs/reference/contract-changes.md` | Log of changes to shared contracts + what each teammate must do. **Read before touching Player/World code; add an entry whenever you change a contract.** |
 | `docs/ASSET_CREDITS.md` | Every third-party asset in the build, logged on import. |
 | `docs/phase1/echoheart_proposal.pdf` | The approved Phase 1 proposal (reading version). |
 

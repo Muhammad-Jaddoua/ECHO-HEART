@@ -1,9 +1,14 @@
 # Asset Credits
 
-Every third-party asset in the build. Add a row in the same PR that imports it.
+Every third-party asset in the build. Add a row in the same commit that imports it.
 
 | Asset | Author | Source URL | License | Used for | Added in |
 |---|---|---|---|---|---|
-| _none yet_ | | | | | |
+| Nature Kit 2.1 (15 selected models) | Kenney | https://kenney.nl/assets/nature-kit | CC0 1.0; included LICENSE.txt | Trees, grass, bushes, flowers, mushrooms, rocks, log, stump, grotto arch in Jehad V1.1 | Jehad_V1.1 |
+
+Pinned download mirror, original file checksums, and conversion details:
+`Assets/ThirdParty/KenneyNatureKit/PROVENANCE.json`. Source art is Kenney's,
+not original team art. Native meshes preserve the OBJ geometry; grass and leaf
+materials have warmer green tints, recorded in the provenance file.
 
 Engine/packages: Unity 6 (URP, Input System, Cinemachine, ProBuilder, AI Navigation). Unity Technologies.

@@ -18,8 +18,15 @@ namespace Echoheart.World
         private Renderer[] _rewardRenderers;
         private float _animation;
         private bool _prompt;
+        private bool _revealAfterLid;
         public bool Opened => _policy.Opened;
         public HiddenRelicV12 Reward => _reward;
+        public bool RevealAfterLid => _revealAfterLid;
+        public void SetRevealAfterLid(bool enabled)
+        {
+            _revealAfterLid = enabled;
+            RevealReward();
+        }
 
         private void Awake()
         {
@@ -37,6 +44,7 @@ namespace Echoheart.World
         {
             _animation = Mathf.MoveTowards(_animation, Opened ? 1f : 0f, Time.deltaTime * 2f);
             if (_lid != null) _lid.localRotation = Quaternion.Euler(Mathf.SmoothStep(0f, 105f, _animation), 0f, 0f);
+            if (_revealAfterLid && Opened && _animation >= ChestRevealPolicyV120.ClearAt && _rewardTrigger != null && !_rewardTrigger.enabled && !_reward.Collected) RevealReward();
             bool prompt = !Opened && Near && _flow.State == GameState.Playing;
             if (prompt != _prompt) { _prompt = prompt; GameEvents.RaisePromptChanged(prompt ? "E  Open secret chest" : string.Empty); }
             if (prompt && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) TryOpen();
@@ -51,7 +59,7 @@ namespace Echoheart.World
         }
         private void RevealReward()
         {
-            bool visible = Opened && _reward != null && !_reward.Collected;
+            bool visible = _reward != null && ChestRevealPolicyV120.Visible(Opened, _reward.Collected, _revealAfterLid, _animation);
             if (_rewardTrigger != null) _rewardTrigger.enabled = visible;
             if (_rewardRenderers != null) foreach (Renderer renderer in _rewardRenderers) if (renderer != null) renderer.enabled = visible;
         }

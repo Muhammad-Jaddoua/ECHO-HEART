@@ -84,6 +84,13 @@ namespace Echoheart.Audio
         }
         private void HandleArena() { _arena = true; _mix.Request(MusicRegionV15.Guardian, 0f, true); StopVoices(); }
         private void HandleComplete() => PlayStinger(WorldCueV15.Restore);
+        public void EndGuardianMusic()
+        {
+            // Optional scene hook; leave existing one-shot feedback and crossfade weights intact.
+            if (!_arena) return;
+            _arena = false;
+            _mix.Request(ChooseRegion(), 0f, true);
+        }
         private MusicRegionV15 ChooseRegion()
         {
             if (_state == GameState.Title || _state == GameState.Complete || _player == null) return MusicRegionV15.Meadow;

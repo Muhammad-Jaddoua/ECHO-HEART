@@ -1,0 +1,62 @@
+{
+  "checkpoint": "Jehad_V1.3",
+  "date": "2026-11-22",
+  "base_commit": "ad1fc1ee00baedac71ca0af358bf06aa6031f21c",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.3.unity",
+  "policy_tests": {
+    "result": "PASS",
+    "assertions": 445,
+    "scenarios": 6,
+    "source": "actual SessionPolicyV13.cs and existing CoreTypes.cs",
+    "compiler": "Microsoft .NET SDK 8.0.404; C# 9.0; warnings as errors",
+    "command": "dotnet run --project Tools/Jehad/V1_3/Tests/FlowPolicyTests.csproj --configuration Release"
+  },
+  "static_checks": {
+    "result": "PASS",
+    "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.3.unity",
+    "csharp_syntax_files": 11,
+    "parsed_unity_documents": 99,
+    "world_prefabs_reused": [
+      "V1.2 main landscape",
+      "V1.2 boss arena"
+    ],
+    "new_gate_prefab": "Assets/_Project/Prefabs/World/Jehad/V1_3/ArenaGate_V1_3.prefab",
+    "single_player_health_relay": true,
+    "arena_entry_and_retry_inside_trigger": true,
+    "retry_clear_of_gate": true,
+    "respawn_callback": "JehadFlowExplorerV13.ResetMotion",
+    "review_harness": "EditorOnly root, no gameplay children",
+    "baseline_files_checked": 417,
+    "modified_baseline_files": [],
+    "unity_editor_compile_playtest": "NOT RUN — no Unity Editor available",
+    "runtime_navmesh_and_ui_verification": "NOT RUN — use FlowReviewHarnessV13 in Unity"
+  },
+  "scope": {
+    "existing_remote_blobs": 646,
+    "expected_existing_file_changes": [
+      "docs/reference/contract-changes.md"
+    ],
+    "older_version_scenes_and_assets": "preserved",
+    "core_api_and_teammate_implementations": "unchanged",
+    "new_third_party_assets": 0
+  },
+  "unity_engine_acceptance": {
+    "result": "NOT RUN",
+    "reason": "No Unity Editor executable or connected Unity environment available",
+    "harness": "FlowReviewHarnessV13 context menu in Play mode; see review note",
+    "required": [
+      "Unity C# compilation and import",
+      "uGUI/Input System at multiple resolutions",
+      "physics pickup triggers and camera",
+      "runtime arena NavMesh and boss movement",
+      "audio playback and volume",
+      "player/ability/enemy integration and boss victories",
+      "lighting and frame-time profiling"
+    ]
+  },
+  "known_integration_gaps": [
+    "Production player is not present on main; scene uses a Testing movement capsule without attacks or inhale.",
+    "Main-world enemy spawners/ability gates and main-world NavMesh remain later integration.",
+    "Music volume source slots exist, but no background music track is assigned."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "checkpoint": "Jehad_V1.4",
+  "date": "2026-11-22",
+  "base_commit": "bb3d5c81828faa2b598b2284d726216052505e12",
+  "static_checks": {
+    "result": "PASS",
+    "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.4.unity",
+    "new_csharp_syntax_files": 3,
+    "new_scene_and_prefab_yaml_documents": 122,
+    "sources": 6,
+    "source_prefabs": 3,
+    "powers_per_location": [
+      "Sword",
+      "Bow",
+      "Fire"
+    ],
+    "source_initially_inactive": true,
+    "enemy_cap_configured": 6,
+    "conservative_terrain_approaches": 6,
+    "solid_box_colliders_checked": 407,
+    "source_clearances_m": {
+      "Entry Sword": 4.65,
+      "Entry Bow": 3.767,
+      "Entry Fire": 7.955,
+      "Approach Sword": 3.299,
+      "Approach Bow": 3.0,
+      "Approach Fire": 3.609
+    },
+    "boss_surface_overlap_excluded": true,
+    "baseline_files_checked": 460,
+    "modified_baseline_files": [
+      "docs/reference/contract-changes.md"
+    ],
+    "unity_compile_playtest_runtime_navmesh": "NOT RUN \u2014 no Unity Editor available",
+    "unity_acceptance_harness": "PopulationReviewV14 context menu; supplied, not executed"
+  },
+  "inherited_flow_policy_regression": {
+    "result": "PASS",
+    "assertions": 445,
+    "scenarios": 6,
+    "scope": "Actual unchanged V1.3 SessionPolicy + CoreTypes compiled in C# 9.0 using .NET 8.0.404; does not test new Unity components"
+  },
+  "preservation": {
+    "base_remote_blobs": 688,
+    "expected_existing_changes": [
+      "docs/reference/contract-changes.md"
+    ],
+    "old_scenes_and_assets": "unchanged",
+    "core_and_teammate_player_combat_ai_implementations": "unchanged",
+    "third_party_imports": 0
+  },
+  "pending_engine_acceptance": [
+    "Unity C# compilation/import",
+    "runtime navigation build time and all source paths",
+    "source spawn/respawn/AI and real physics damage",
+    "pause/retry/boss isolation population harness",
+    "V1.3 flow harness regression",
+    "production inhale/ability player integration",
+    "three separate full-health boss wins using Sword/Bow/Fire",
+    "1080p target-PC performance and camera review"
+  ],
+  "production_player": {
+    "main": "absent; Testing capsule reused without attacks or inhale",
+    "branch_inspected": "feature/2-player-movement at 8bfd420dfb5e9ae9173c0a7d1aa85e3c4b7d795f",
+    "branch_contents": "movement/input/camera; no inhale/ability holder",
+    "branch_modified_or_merged": false
+  },
+  "unity_harness_executed": false,
+  "release_ready": false
+}

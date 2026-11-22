@@ -91,6 +91,18 @@ namespace Echoheart.Audio
             _arena = false;
             _mix.Request(ChooseRegion(), 0f, true);
         }
+        public void SilenceMutedAmbience()
+        {
+            // Optional settings hook: a zero SFX setting bypasses only the ambient fade-out.
+            if (SfxVolume > 0f) return;
+            SilenceAmbient(_water); SilenceAmbient(_forest); SilenceAmbient(_alpine);
+        }
+        private static void SilenceAmbient(AudioSource source)
+        {
+            if (source == null) return;
+            source.volume = 0f;
+            if (source.isPlaying) source.Stop();
+        }
         private MusicRegionV15 ChooseRegion()
         {
             if (_state == GameState.Title || _state == GameState.Complete || _player == null) return MusicRegionV15.Meadow;

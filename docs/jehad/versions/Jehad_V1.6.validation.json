@@ -1,0 +1,147 @@
+{
+  "checkpoint": "Jehad_V1.6",
+  "date": "2026-11-22",
+  "base_commit": "318c8c95e1ce9e0f0eae4efd20b5748e2b1d7af6",
+  "focus": "Complete title/menu/settings/HUD/prompt/toast UI polish",
+  "policy_tests": {
+    "result": "PASS",
+    "assertions": 873,
+    "sources": [
+      "actual UiPolicyV16.cs (router, preferences and display timer)",
+      "actual shared CoreTypes.cs"
+    ],
+    "compiler": "C# 9.0 / Microsoft .NET SDK 8.0.404; warnings as errors"
+  },
+  "static_checks": {
+    "result": "PASS",
+    "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.6.unity",
+    "new_csharp_syntax_files": 13,
+    "scene_yaml_documents": 115,
+    "single_menu_presenter": "FlowMenuV16, legacy class absent from scene",
+    "flow_harness_type_updated": true,
+    "single_audio_listener": true,
+    "modal_page_interaction_isolated": true,
+    "input_shield_one_frame": true,
+    "settings_scope": "session only; restores runtime display/quality/frame settings on teardown",
+    "reference_geometry_checks": [
+      {
+        "screen": [
+          1280,
+          720
+        ],
+        "virtual_canvas": [
+          1600.0,
+          900.0
+        ],
+        "largest_menu_card": [
+          1320,
+          760
+        ],
+        "fits_reference_geometry": true
+      },
+      {
+        "screen": [
+          1920,
+          1080
+        ],
+        "virtual_canvas": [
+          1600.0,
+          900.0
+        ],
+        "largest_menu_card": [
+          1320,
+          760
+        ],
+        "fits_reference_geometry": true
+      },
+      {
+        "screen": [
+          2560,
+          1080
+        ],
+        "virtual_canvas": [
+          2133.33,
+          900.0
+        ],
+        "largest_menu_card": [
+          1320,
+          760
+        ],
+        "fits_reference_geometry": true
+      },
+      {
+        "screen": [
+          1024,
+          768
+        ],
+        "virtual_canvas": [
+          1600.0,
+          1200.0
+        ],
+        "largest_menu_card": [
+          1320,
+          760
+        ],
+        "fits_reference_geometry": true
+      },
+      {
+        "screen": [
+          3840,
+          2160
+        ],
+        "virtual_canvas": [
+          1600.0,
+          900.0
+        ],
+        "largest_menu_card": [
+          1320,
+          760
+        ],
+        "fits_reference_geometry": true
+      }
+    ],
+    "hud_max_scale_no_cluster_overlap": true,
+    "baseline_files_checked": 615,
+    "modified_baseline_files": [
+      "docs/reference/contract-changes.md"
+    ],
+    "unity_compilation_layout_input_display_playtest": "NOT RUN \u2014 no Unity Editor available",
+    "unity_harnesses": [
+      "UiReviewHarnessV16 supplied, not executed",
+      "FlowReviewHarnessV16 supplied, not executed"
+    ]
+  },
+  "settings": {
+    "audio": "existing Music/SFX volume provider used by actual V1.5 audio",
+    "display": "real resolution, window/borderless mode, actual quality tiers, VSync and target frame cap",
+    "confirmation": "15 unscaled seconds; keep, revert, timeout, focus loss and teardown handling",
+    "interface": [
+      "HUD scale",
+      "high contrast",
+      "reduced UI motion",
+      "objective/control hints",
+      "ranged aim guide"
+    ],
+    "persistence": "session-only; no disk saves; restores initial runtime graphics on scene teardown"
+  },
+  "preservation": {
+    "existing_remote_blobs": 843,
+    "expected_existing_changes": [
+      "docs/reference/contract-changes.md"
+    ],
+    "old_scenes_assets_shared_core_teammate_code_and_release_scene": "unchanged"
+  },
+  "new_third_party_assets": 0,
+  "ui_native_visual_and_engine_acceptance": "NOT RUN; no Unity Editor available",
+  "required_manual_acceptance": [
+    "Unity C# compile/import",
+    "actual font/glyph/layout appearance and pointer hit areas",
+    "mouse, Tab/Shift+Tab, keyboard and gamepad focus/cancel behavior",
+    "HUD hover and one-frame menu-exit input shield",
+    "real Music/SFX slider plumbing",
+    "standalone display keep/revert/timeout/focus loss and teardown",
+    "all menu states and five aspect/resolution profiles",
+    "new UI/flow and inherited world/population harnesses",
+    "target-PC UI/world frame time"
+  ]
+}

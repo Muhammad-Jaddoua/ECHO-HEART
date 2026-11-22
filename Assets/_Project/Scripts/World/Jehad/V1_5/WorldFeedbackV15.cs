@@ -30,6 +30,7 @@ namespace Echoheart.World
         public bool Playing => _flow != null && _flow.State == GameState.Playing;
         public WorldAudioV15 Audio => _audio;
         public WorldParticlesV15 Particles => _particles;
+        public bool ExternalAirborneCues { get; set; }
 
         private void OnEnable()
         {
@@ -97,8 +98,11 @@ namespace Echoheart.World
                 bool grounded = _controller != null && _controller.isGrounded;
                 if (Playing && !_refresh && Time.time >= _movementAfter && distance < 8f)
                 {
-                    if (!grounded && _grounded) _audio.PlayWorld(WorldCueV15.Jump, position);
-                    if (grounded && !_grounded) { _audio.PlayWorld(WorldCueV15.Land, position); _particles.Burst(WorldBurstV15.Dust, position - Vector3.up * 0.7f); }
+                    if (!ExternalAirborneCues)
+                    {
+                        if (!grounded && _grounded) _audio.PlayWorld(WorldCueV15.Jump, position);
+                        if (grounded && !_grounded) { _audio.PlayWorld(WorldCueV15.Land, position); _particles.Burst(WorldBurstV15.Dust, position - Vector3.up * 0.7f); }
+                    }
                     if (grounded)
                     {
                         _walked += distance;

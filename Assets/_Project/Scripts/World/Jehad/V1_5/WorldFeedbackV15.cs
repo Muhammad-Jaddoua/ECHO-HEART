@@ -31,6 +31,7 @@ namespace Echoheart.World
         public WorldAudioV15 Audio => _audio;
         public WorldParticlesV15 Particles => _particles;
         public bool ExternalAirborneCues { get; set; }
+        public bool LocalPlayerHitFeedback { get; set; }
 
         private void OnEnable()
         {

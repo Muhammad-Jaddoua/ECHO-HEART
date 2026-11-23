@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.23.unity",
+  "scene_yaml_documents": 133,
+  "new_csharp_syntax_files": 3,
+  "extended_csharp_syntax_files": 2,
+  "compiled_tests": {
+    "player_hit_point_policy": {
+      "result": "PASS",
+      "assertions": 39,
+      "output": "PASS: 39 assertions; actual V1.23 player hit-point policy (C# 9.0, no Unity stubs).",
+      "scope": "Actual pure C# policy; Unity APIs excluded"
+    }
+  },
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 155,
+    "distinct_top_level_project_type_names": 188,
+    "indexed_sources_sha256": "ac4519a786a2d984ac107389698ac562c6d4d6c3aa9b6249d5ad14971da4a6e7",
+    "jehad_source_files_audited": 119,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5671,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "scene_matches_v122_after_removing_two_components_and_version_labels": true,
+  "earlier_sources_restored_after_removing_optional_guard_and_property": true,
+  "default_false_option_preserves_earlier_scenes": true,
+  "audio_and_particle_calls_share_selected_point": true,
+  "original_damage_health_fall_recovery_and_reward_owners_unchanged": true,
+  "project_sources_compared_to_remote_after_reversing_optional_changes": 152,
+  "runtime_and_editoronly_review_bindings_verified": true,
+  "single_audio_listener": true,
+  "baseline_files_checked": 1021,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/World/Jehad/V1_5/ActorFeedbackV15.cs",
+    "Assets/_Project/Scripts/World/Jehad/V1_5/WorldFeedbackV15.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "unity_compile_player_hurt_fall_recovery_sound_particles_native_review_profiling": "NOT RUN \u2014 no Unity Editor available",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23"
+}

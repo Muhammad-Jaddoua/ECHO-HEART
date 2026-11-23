@@ -46,6 +46,8 @@ namespace Echoheart.World
         {
             if (_feedback == null || !_feedback.Playing || (_enemy != null && _enemy.Current == EnemyBrain.State.BeingInhaled)) return;
             Vector3 point = hit.Point.sqrMagnitude > 0.001f ? hit.Point : transform.position + Vector3.up;
+            if (_feedback.LocalPlayerHitFeedback && HitFeedbackPointV123.UseActor(_health != null && _health.Team == Team.Player, (point - transform.position).sqrMagnitude))
+                point = transform.position + Vector3.up;
             _feedback.Audio.PlayWorld(_health.Team == Team.Player ? WorldCueV15.PlayerHurt : WorldCueV15.Hit, point);
             _feedback.Particles.Burst(WorldBurstV15.Hit, point);
             _flashUntil = Time.time + 0.12f; _flashing = true; Tint(new Color(1f, 0.88f, 0.65f));

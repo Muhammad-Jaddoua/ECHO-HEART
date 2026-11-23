@@ -1,0 +1,3 @@
+# Small, project-original V1.5 loops are stored directly (each under 150 KiB).
+# Keep this exception local; other project audio continues using the root LFS rules.
+*.ogg -filter -diff -merge -text

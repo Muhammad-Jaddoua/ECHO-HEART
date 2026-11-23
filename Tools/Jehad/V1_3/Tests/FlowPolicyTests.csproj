@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/Core/CoreTypes.cs" Link="CoreTypes.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/World/Jehad/V1_3/SessionPolicyV13.cs" Link="SessionPolicyV13.cs" />
+  </ItemGroup>
+</Project>

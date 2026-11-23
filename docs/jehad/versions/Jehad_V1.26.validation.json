@@ -1,0 +1,48 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.26.unity",
+  "scene_yaml_documents": 136,
+  "new_csharp_syntax_files": 1,
+  "extended_csharp_syntax_files": 1,
+  "compiled_tests": {
+    "flow_policy_regression": {
+      "result": "PASS",
+      "assertions": 445,
+      "output": "PASS: 445 assertions across 6 flow scenarios; actual SessionPolicyV13 + CoreTypes compiled.",
+      "scope": "Actual unchanged SessionPolicyV13/CoreTypes; excludes Unity flow side effects and counter timing"
+    }
+  },
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 159,
+    "distinct_top_level_project_type_names": 192,
+    "indexed_sources_sha256": "38802e83d428bb3ebf60b4cb7d643818a93283569a2d048e07acdc559e5272fc",
+    "jehad_source_files_audited": 123,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5734,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "scene_matches_v125_after_removing_editoronly_review_and_version_labels": true,
+  "original_flow_restored_after_reversing_pause_refresh": true,
+  "accepted_pause_refreshes_counter_before_publishing_state": true,
+  "unchanged_counts_keep_original_no_duplicate_event_guard": true,
+  "counter_poll_pickup_menu_timer_and_other_state_methods_preserved": true,
+  "shared_flow_applies_snapshot_fix_to_earlier_scenes": true,
+  "native_review_uses_real_pickup_with_counter_polling_temporarily_held_and_restored": true,
+  "project_sources_compared_to_remote_after_reversing_pause_edit": 158,
+  "new_runtime_components": 0,
+  "single_audio_listener": true,
+  "baseline_files_checked": 1065,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/World/Jehad/V1_3/SessionFlowV13.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "unity_compile_trigger_pickup_pause_summary_event_order_native_review_playtest": "NOT RUN \u2014 no Unity Editor available; pure flow policy tests do not establish snapshot behavior",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23"
+}

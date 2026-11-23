@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.25.unity",
+  "scene_yaml_documents": 135,
+  "new_csharp_syntax_files": 1,
+  "extended_csharp_syntax_files": 2,
+  "compiled_tests": {
+    "count_text_cache": {
+      "result": "PASS",
+      "assertions": 123,
+      "output": "PASS: 123 assertions; actual V1.25 count-text cache (C# 9.0, no Unity stubs).\n{\"iterations\":10000,\"cached_display_bytes\":0,\"previous_display_expression_bytes\":1680000,\"cached_pending_bytes\":0,\"previous_pending_expression_bytes\":400000,\"scope\":\"Managed allocation microbenchmark of formatting only under .NET 8; not Unity UI/GC/frame-time profiling.\"}",
+      "scope": "Actual CountTextV125 source, C# 9.0/.NET 8; Unity APIs excluded"
+    }
+  },
+  "managed_allocation_microbenchmark": {
+    "iterations": 10000,
+    "cached_display_bytes": 0,
+    "previous_display_expression_bytes": 1680000,
+    "cached_pending_bytes": 0,
+    "previous_pending_expression_bytes": 400000,
+    "scope": "Managed allocation microbenchmark of formatting only under .NET 8; not Unity UI/GC/frame-time profiling."
+  },
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 158,
+    "distinct_top_level_project_type_names": 191,
+    "indexed_sources_sha256": "c7d895878fb79fe7d33e849ce17639527a7e1df2094df36eed62b0c8f5497833",
+    "jehad_source_files_audited": 122,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5717,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "scene_matches_v124_except_version_labels": true,
+  "earlier_ui_sources_restored_after_reversing_two_fields_and_format_calls": true,
+  "original_wording_queue_timer_input_display_and_gameplay_owners_preserved": true,
+  "shared_ui_renderers_use_same_cache_in_earlier_scenes": true,
+  "project_sources_compared_to_remote_after_reversing_cache_call_sites": 157,
+  "new_components": 0,
+  "single_audio_listener": true,
+  "baseline_files_checked": 1052,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/UI/Jehad/V1_10/WorldToastV110.cs",
+    "Assets/_Project/Scripts/UI/Jehad/V1_17/FlowMenuV117.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "unity_compile_ui_rendering_native_allocations_frame_times_playtest_profiling": "NOT RUN \u2014 no Unity Editor available; managed formatter result is not a Unity performance measurement",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23"
+}

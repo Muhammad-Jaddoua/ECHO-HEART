@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><LangVersion>9.0</LangVersion><EnableDefaultCompileItems>false</EnableDefaultCompileItems><TreatWarningsAsErrors>true</TreatWarningsAsErrors></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_8/UiFocusHistoryV18.cs" Link="UiFocusHistoryV18.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/Core/CoreTypes.cs" Link="CoreTypes.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_6/UiPolicyV16.cs" Link="UiPolicyV16.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_7/UiPolicyV17.cs" Link="UiPolicyV17.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_7/UiNavigationV17.cs" Link="UiNavigationV17.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_7/UiDisplayEditV17.cs" Link="UiDisplayEditV17.cs" />
+  </ItemGroup>
+</Project>

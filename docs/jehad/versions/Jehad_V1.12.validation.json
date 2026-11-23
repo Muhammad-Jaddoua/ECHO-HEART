@@ -1,0 +1,49 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.12.unity",
+  "new_csharp_syntax_files": 3,
+  "scene_yaml_documents": 119,
+  "compiled_tests": {
+    "guide": {
+      "result": "PASS",
+      "assertions": 80,
+      "output": "PASS: 80 assertions; actual V1.12 objective visibility and bearing placement with CoreTypes/shared layout (C# 9.0).",
+      "scope": "Actual pure C# sources; Unity APIs excluded"
+    },
+    "guardian_regression": {
+      "result": "PASS",
+      "assertions": 51,
+      "output": "PASS: 51 assertions; actual V1.11 Guardian cue lifecycle and geometry (C# 9.0).",
+      "scope": "Actual pure C# sources; Unity APIs excluded"
+    },
+    "notification_regression": {
+      "result": "PASS",
+      "assertions": 111,
+      "output": "PASS: 111 assertions; actual V1.10 notification queue and shared layout model (C# 9.0).",
+      "scope": "Actual pure C# sources; Unity APIs excluded"
+    },
+    "layout_regression": {
+      "result": "PASS",
+      "assertions": 335,
+      "output": "PASS: 335 assertions; actual V1.9 safe-area, menu-fit and shared HUD/toast layout model (C# 9.0).",
+      "scope": "Actual pure C# sources; Unity APIs excluded"
+    },
+    "menu_regression": {
+      "result": "PASS",
+      "assertions": 1586,
+      "output": "PASS: 1586 assertions; actual V1.8 focus history, V1.7 routing/navigation/display transaction and V1.6 preferences/timer compiled with actual CoreTypes (C# 9.0).",
+      "scope": "Actual pure C# sources; Unity APIs excluded"
+    }
+  },
+  "existing_scene_restored_after_removing_two_added_components": true,
+  "authored_camera_entrance_heart_references_verified": true,
+  "hints_prompt_and_camera_projection_guards": true,
+  "input_transparent_marker": true,
+  "no_progression_or_reward_calls_in_runtime": true,
+  "single_audio_listener": true,
+  "baseline_files_checked": 785,
+  "modified_baseline_files": [
+    "docs/reference/contract-changes.md"
+  ],
+  "unity_compile_render_camera_input_harnesses": "NOT RUN \u2014 no Unity Editor available"
+}

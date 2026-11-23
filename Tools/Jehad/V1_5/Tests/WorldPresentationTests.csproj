@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems><TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/Core/CoreTypes.cs" Link="CoreTypes.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/Audio/Jehad/V1_5/EnvironmentMusicV15.cs" Link="EnvironmentMusicV15.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/World/Jehad/V1_5/ChestStateV15.cs" Link="ChestStateV15.cs" />
+  </ItemGroup>
+</Project>

@@ -49,7 +49,7 @@ namespace Echoheart.World
             for(int i=0;i<_opened.Length;i++)
             {
                 bool opened=_chests[i]!=null&&_chests[i].Opened;
-                if(opened&&!_opened[i])_toast.Show(new ToastNoticeV110("chest:"+i,ToastKindV110.Chest,"CHEST OPENED","A hidden relic has been revealed."));
+                if(opened&&!_opened[i])_toast.Show(new ToastNoticeV110("chest:"+i,ToastKindV110.Chest,"CHEST OPENED","A hidden relic waits inside."));
                 _opened[i]=opened;
             }
             for(int i=0;i<_collected.Length;i++)

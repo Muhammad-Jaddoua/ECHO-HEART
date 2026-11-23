@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.24.unity",
+  "scene_yaml_documents": 135,
+  "new_csharp_syntax_files": 2,
+  "extended_csharp_syntax_files": 1,
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 157,
+    "distinct_top_level_project_type_names": 190,
+    "indexed_sources_sha256": "8e2873f32476d924af8a465bdb47ac195d95ea4e7f08473fe8ba445fc27fcb72",
+    "jehad_source_files_audited": 121,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5709,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "scene_matches_v123_after_removing_two_components_and_version_labels": true,
+  "original_audio_restored_after_removing_optional_stinger_hook": true,
+  "only_new_scene_bridge_calls_hook_on_title_entry": true,
+  "music_world_voices_and_audio_options_not_written_by_hook": true,
+  "native_review_uses_real_death_retry_guardian_defeat_and_heart_completion": true,
+  "earlier_scenes_lack_bridge_and_keep_original_routing": true,
+  "project_sources_compared_to_remote_after_reversing_extension": 155,
+  "runtime_and_editoronly_review_bindings_verified": true,
+  "single_audio_listener": true,
+  "baseline_files_checked": 1039,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/Audio/Jehad/V1_5/WorldAudioV15.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "pure_gameplay_suites": "NOT RERUN \u2014 no pure policy or original method-body changes",
+  "unity_compile_stinger_audio_death_retry_heart_completion_native_review_profiling": "NOT RUN \u2014 no Unity Editor available",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23"
+}

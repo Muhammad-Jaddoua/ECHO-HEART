@@ -84,6 +84,11 @@ namespace Echoheart.Audio
         }
         private void HandleArena() { _arena = true; _mix.Request(MusicRegionV15.Guardian, 0f, true); StopVoices(); }
         private void HandleComplete() => PlayStinger(WorldCueV15.Restore);
+        public void StopSessionStinger()
+        {
+            // Optional scene hook; regional music and world SFX keep their existing owners.
+            if (_stinger != null) _stinger.Stop();
+        }
         public void EndGuardianMusic()
         {
             // Optional scene hook; leave existing one-shot feedback and crossfade weights intact.

@@ -21,6 +21,7 @@ namespace Echoheart.UI
         private readonly UiPolicyV17 _route=new UiPolicyV17();
         private readonly List<Selectable> _focus=new List<Selectable>();
         private readonly UiFocusHistoryV18<GameObject> _focusHistory=new UiFocusHistoryV18<GameObject>();
+        private readonly CountTextV125 _displayCountdownText=new CountTextV125("Reverting in "," seconds.\nChoose Revert if the image is difficult to see.",false);
         private UiFactoryV17 _ui;
         private UiHudV115 _hud;
         private MenuScreensV117 _views;
@@ -88,7 +89,7 @@ namespace Echoheart.UI
             if(Screen.width!=_width||Screen.height!=_height||Screen.safeArea!=_lastSafe||_safe.rect.size!=_lastLayoutSize)SafeArea();
             _fade.alpha=_settings.Values.ReduceMotion?1f:Mathf.MoveTowards(_fade.alpha,1f,Time.unscaledDeltaTime*6f);
             _hud.Tick(_settings.Values);
-            if(_route.Modal==UiModalV17.Display){_views.ModalBody.text="Reverting in "+Mathf.CeilToInt(_settings.PreviewSeconds)+" seconds.\nChoose Revert if the image is difficult to see.";bool ready=Time.frameCount>=_displayReadyFrame;if(_views.ConfirmButton.interactable!=ready){_views.ConfirmButton.interactable=ready;RefreshNavigation();}}
+            if(_route.Modal==UiModalV17.Display){_views.ModalBody.text=_displayCountdownText.Format(Mathf.CeilToInt(_settings.PreviewSeconds));bool ready=Time.frameCount>=_displayReadyFrame;if(_views.ConfirmButton.interactable!=ready){_views.ConfirmButton.interactable=ready;RefreshNavigation();}}
             Keyboard keyboard=Keyboard.current;
             if(_route.State!=GameState.Playing)
             {

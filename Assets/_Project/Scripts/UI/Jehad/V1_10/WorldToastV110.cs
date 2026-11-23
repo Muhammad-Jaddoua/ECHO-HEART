@@ -11,6 +11,7 @@ namespace Echoheart.UI
         [SerializeField] private SessionFlowV13 _flow;
         [SerializeField] private UiSettingsV17 _settings;
         private readonly ToastQueueV110 _queue=new ToastQueueV110();
+        private readonly CountTextV125 _pendingCountText=new CountTextV125(""," more",true);
         private RectTransform _safe,_surface,_back,_progress;
         private Text _heading,_message,_count;
         private UiGlyphV16 _icon;
@@ -73,7 +74,7 @@ namespace Echoheart.UI
             if(_group==null)return;
             bool visible=Playing&&_queue.HasActive;_group.alpha=visible?(_settings.Values.ReduceMotion?1:Mathf.Clamp01(_queue.Remaining/.35f)):0;
             if(!visible)return;
-            ToastNoticeV110 notice=_queue.Active;_heading.text=notice.Heading;_message.text=notice.Message;_count.text=_queue.PendingCount>0?_queue.PendingCount+" more":"";
+            ToastNoticeV110 notice=_queue.Active;_heading.text=notice.Heading;_message.text=notice.Message;_count.text=_pendingCountText.Format(_queue.PendingCount);
             _icon.Kind=notice.Kind==ToastKindV110.Objective?UiGlyphKindV16.Heart:notice.Kind==ToastKindV110.Secret?UiGlyphKindV16.Check:UiGlyphKindV16.Relic;
             _icon.color=_heading.color=notice.Kind==ToastKindV110.Objective?UiFactoryV17.Mint:UiFactoryV17.Gold;
             _progress.gameObject.SetActive(!_settings.Values.ReduceMotion);_progress.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,792*Mathf.Clamp01(_queue.Remaining/_queue.Duration));

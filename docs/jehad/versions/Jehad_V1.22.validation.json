@@ -1,0 +1,90 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.22.unity",
+  "scene_yaml_documents": 131,
+  "existing_runtime_source_fixes": 1,
+  "new_runtime_components": 0,
+  "scene_matches_v121_except_version_labels": true,
+  "source_matches_main_after_removing_single_audio_import": true,
+  "all_project_sources_compared_to_remote_tree_except_import": 152,
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 152,
+    "distinct_top_level_project_type_names": 185,
+    "indexed_sources_sha256": "59ba8800dcddb888f6e21b824f6240f3df6f318b5e0ff49be6b5ac5c97270834",
+    "jehad_source_files_audited": 116,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5651,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "before_fix_namespace_audit": {
+    "result": "FAIL",
+    "project_source_files_indexed": 152,
+    "distinct_top_level_project_type_names": 185,
+    "jehad_source_files_audited": 116,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5651,
+    "missing_namespace_candidates": [
+      {
+        "configuration": "Editor",
+        "path": "Assets/_Project/Scripts/World/Jehad/V1_21/AirborneFeedbackV121.cs",
+        "line": 73,
+        "column": 43,
+        "identifier": "WorldCueV15",
+        "candidate_namespaces": [
+          "Echoheart.Audio"
+        ]
+      },
+      {
+        "configuration": "Editor",
+        "path": "Assets/_Project/Scripts/World/Jehad/V1_21/AirborneFeedbackV121.cs",
+        "line": 78,
+        "column": 43,
+        "identifier": "WorldCueV15",
+        "candidate_namespaces": [
+          "Echoheart.Audio"
+        ]
+      },
+      {
+        "configuration": "Player",
+        "path": "Assets/_Project/Scripts/World/Jehad/V1_21/AirborneFeedbackV121.cs",
+        "line": 73,
+        "column": 43,
+        "identifier": "WorldCueV15",
+        "candidate_namespaces": [
+          "Echoheart.Audio"
+        ]
+      },
+      {
+        "configuration": "Player",
+        "path": "Assets/_Project/Scripts/World/Jehad/V1_21/AirborneFeedbackV121.cs",
+        "line": 78,
+        "column": 43,
+        "identifier": "WorldCueV15",
+        "candidate_namespaces": [
+          "Echoheart.Audio"
+        ]
+      }
+    ],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "single_audio_listener": true,
+  "baseline_files_checked": 976,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/World/Jehad/V1_21/AirborneFeedbackV121.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "pure_gameplay_suites": "NOT RERUN \u2014 source bodies and pure policies unchanged; V1.21 evidence retained separately",
+  "unity_compile_import_audio_physics_playtest_profiling": "NOT RUN \u2014 no Unity Editor available",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23"
+}

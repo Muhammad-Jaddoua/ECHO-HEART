@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "world_m": [
+    240,
+    240
+  ],
+  "main_area_m2": 57600,
+  "ratio_to_v11": 11.764705882352942,
+  "maximum_elevation_m": 52.25445463851443,
+  "secret_pickups": 16,
+  "terrain_reachable_secret_approaches": 16,
+  "tree_lod_groups": 337,
+  "foliage_instances": 3509,
+  "foliage_batches": 138,
+  "mesh_colliders": 11,
+  "native_meshes": 42,
+  "parsed_yaml_documents": 5254,
+  "source_geometry_and_uvs": "exact full-resolution OBJ corner/index comparison passed",
+  "foliage_bounds": "all transformed vertices fit each batch bound",
+  "unity_editor_compile_shader_compile_playtest": "NOT RUN \u2014 no connected Unity Editor",
+  "navmesh_bake": "NOT RUN",
+  "gpu_profile": "NOT RUN",
+  "csharp_syntax_tree_parse": "PASS: 3 files; no Unity type check",
+  "base_main_commit": "21d32eeabd87d7559283ab30b0051852ac4707db",
+  "earlier_version_preservation": "PASS: existing local baseline unchanged except asset credits"
+}

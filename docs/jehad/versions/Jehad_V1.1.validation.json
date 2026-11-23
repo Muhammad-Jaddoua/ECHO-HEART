@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "new_or_updated_files": 165,
+  "unchanged_v10_files": 32,
+  "yaml_documents": 913,
+  "native_meshes": 20,
+  "triangles_in_mesh_assets": 47332,
+  "secret_locations": 6,
+  "ground_approach_checks": {
+    "reachable_secrets": 6,
+    "grid_step_m": 0.5,
+    "clearance_radius_m": 0.45,
+    "raised_perch_jump": "requires Unity playtest"
+  },
+  "main_area_m2": 4896,
+  "area_multiplier": 4,
+  "ground_cover_instances": 326,
+  "runtime_scripts_changed": 0,
+  "unity_import_playtest": "not run; no Unity Editor"
+}

@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.7.unity",
+  "new_csharp_syntax_files": 12,
+  "compiled_policy_tests": {
+    "result": "PASS",
+    "assertions": 1570,
+    "output": "PASS: 1570 assertions; actual V1.7 routing, spatial navigation and display transaction; reused V1.6 preferences/timer compiled with actual CoreTypes (C# 9.0).",
+    "scope": "Actual pure C# sources with actual CoreTypes; Unity APIs excluded"
+  },
+  "gameplay_yaml_unchanged": true,
+  "spatial_navigation_scope_and_slider_guards": true,
+  "staged_display_change_and_discard_guards": true,
+  "scene_yaml_documents": 115,
+  "single_menu_presenter": "FlowMenuV17, legacy class absent from scene",
+  "flow_harness_type_updated": true,
+  "single_audio_listener": true,
+  "modal_page_interaction_isolated": true,
+  "input_shield_one_frame": true,
+  "settings_scope": "session only; restores runtime display/quality/frame settings on teardown",
+  "reference_geometry_checks": [
+    {
+      "screen": [
+        1280,
+        720
+      ],
+      "virtual_canvas": [
+        1600.0,
+        900.0
+      ],
+      "largest_menu_card": [
+        1320,
+        760
+      ],
+      "fits_reference_geometry": true
+    },
+    {
+      "screen": [
+        1920,
+        1080
+      ],
+      "virtual_canvas": [
+        1600.0,
+        900.0
+      ],
+      "largest_menu_card": [
+        1320,
+        760
+      ],
+      "fits_reference_geometry": true
+    },
+    {
+      "screen": [
+        2560,
+        1080
+      ],
+      "virtual_canvas": [
+        2133.33,
+        900.0
+      ],
+      "largest_menu_card": [
+        1320,
+        760
+      ],
+      "fits_reference_geometry": true
+    },
+    {
+      "screen": [
+        1024,
+        768
+      ],
+      "virtual_canvas": [
+        1600.0,
+        1200.0
+      ],
+      "largest_menu_card": [
+        1320,
+        760
+      ],
+      "fits_reference_geometry": true
+    },
+    {
+      "screen": [
+        3840,
+        2160
+      ],
+      "virtual_canvas": [
+        1600.0,
+        900.0
+      ],
+      "largest_menu_card": [
+        1320,
+        760
+      ],
+      "fits_reference_geometry": true
+    }
+  ],
+  "hud_max_scale_no_cluster_overlap": true,
+  "baseline_files_checked": 654,
+  "modified_baseline_files": [
+    "docs/reference/contract-changes.md"
+  ],
+  "unity_compilation_layout_input_display_playtest": "NOT RUN \u2014 no Unity Editor available",
+  "unity_harnesses": [
+    "UiReviewHarnessV17 supplied, not executed",
+    "FlowReviewHarnessV17 supplied, not executed"
+  ]
+}

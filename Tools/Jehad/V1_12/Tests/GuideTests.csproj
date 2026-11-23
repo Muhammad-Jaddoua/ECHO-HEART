@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><LangVersion>9.0</LangVersion><EnableDefaultCompileItems>false</EnableDefaultCompileItems><TreatWarningsAsErrors>true</TreatWarningsAsErrors></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_12/ObjectiveGuidePolicyV112.cs" Link="ObjectiveGuidePolicyV112.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/UI/Jehad/V1_9/UiLayoutV19.cs" Link="UiLayoutV19.cs" />
+    <Compile Include="../../../../Assets/_Project/Scripts/Core/CoreTypes.cs" Link="CoreTypes.cs" />
+  </ItemGroup>
+</Project>

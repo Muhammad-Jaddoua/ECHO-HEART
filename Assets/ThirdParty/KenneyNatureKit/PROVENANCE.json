@@ -1,0 +1,213 @@
+{
+  "creator": "Kenney",
+  "official_source": "https://kenney.nl/assets/nature-kit",
+  "license": "CC0-1.0",
+  "mirror_repository": "Mcamento8/omnimod-3d-library",
+  "mirror_commit": "ecbc7387232c26e203f71495ba85751ba43252cc",
+  "conversion": "Exact OBJ positions/normals/material groups to native Unity meshes; source files retained as .obj.txt/.mtl.txt. No textures required.",
+  "urp_color_adjustments": {
+    "grass": [
+      0.26,
+      0.64,
+      0.23
+    ],
+    "leafsGreen": [
+      0.16,
+      0.6,
+      0.21
+    ],
+    "leafsDark": [
+      0.1,
+      0.38,
+      0.22
+    ]
+  },
+  "downloads": [
+    {
+      "name": "tree_detailed.obj",
+      "bytes": 40489,
+      "sha256": "d0d60d13df3d0c88ba935ee712e0f49b692de1d305ce0588c9abf74894d762b9",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_detailed.obj"
+    },
+    {
+      "name": "tree_detailed.mtl",
+      "bytes": 168,
+      "sha256": "7fb643fb2dbf46987a076147e17539ac7508b3f502fd09152d83c5f4d01ae164",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_detailed.mtl"
+    },
+    {
+      "name": "tree_oak.obj",
+      "bytes": 17614,
+      "sha256": "70b9bf946b790fe9559a23e597ea9b8e8b0cbb4b04120e87f9693b14d15019a3",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_oak.obj"
+    },
+    {
+      "name": "tree_oak.mtl",
+      "bytes": 139,
+      "sha256": "30202087047f769598a62b968fbb9a0cc5d6ac0a772bb95c6e9ad98db5d5efbc",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_oak.mtl"
+    },
+    {
+      "name": "tree_pineRoundB.obj",
+      "bytes": 24011,
+      "sha256": "51bb95b5418be168d4803535840bd6f4575720662ac70f9c91fae6b346a6a4f8",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_pineRoundB.obj"
+    },
+    {
+      "name": "tree_pineRoundB.mtl",
+      "bytes": 165,
+      "sha256": "5da3a2b4c36e0cacd9e121741e61a0940b50cf56fb9827e3265daedff3e50efe",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/tree_pineRoundB.mtl"
+    },
+    {
+      "name": "plant_bushDetailed.obj",
+      "bytes": 9034,
+      "sha256": "ee564dd227b29b280a2c95f6c454aa633c5894132cd9de917d68bc0f3a023490",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/plant_bushDetailed.obj"
+    },
+    {
+      "name": "plant_bushDetailed.mtl",
+      "bytes": 83,
+      "sha256": "cc432ffb66222b0a73a7a02436c4b0de5a6c158675fb894ab11f7ec4e1257aa5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/plant_bushDetailed.mtl"
+    },
+    {
+      "name": "plant_bushSmall.obj",
+      "bytes": 1567,
+      "sha256": "4a7d6be474b801937623ec515d60468b86bb43fee217d9413925c6c31ff6834a",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/plant_bushSmall.obj"
+    },
+    {
+      "name": "plant_bushSmall.mtl",
+      "bytes": 83,
+      "sha256": "cc432ffb66222b0a73a7a02436c4b0de5a6c158675fb894ab11f7ec4e1257aa5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/plant_bushSmall.mtl"
+    },
+    {
+      "name": "grass.obj",
+      "bytes": 11167,
+      "sha256": "c29167c45dca57c630e4503114c2b0c6324aaa1d4e615f809ee261582ae16e6e",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/grass.obj"
+    },
+    {
+      "name": "grass.mtl",
+      "bytes": 83,
+      "sha256": "cc432ffb66222b0a73a7a02436c4b0de5a6c158675fb894ab11f7ec4e1257aa5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/grass.mtl"
+    },
+    {
+      "name": "grass_large.obj",
+      "bytes": 19496,
+      "sha256": "5d403db481ac8c8dc7930b96875a1761d288ce394bb0046523d3a6f45e50f0d5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/grass_large.obj"
+    },
+    {
+      "name": "grass_large.mtl",
+      "bytes": 83,
+      "sha256": "cc432ffb66222b0a73a7a02436c4b0de5a6c158675fb894ab11f7ec4e1257aa5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/grass_large.mtl"
+    },
+    {
+      "name": "flower_yellowA.obj",
+      "bytes": 5518,
+      "sha256": "e11fb1b123cc4a22ab0c71c2f9f290310a66e4459c4c10bf7495e9391edf8034",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/flower_yellowA.obj"
+    },
+    {
+      "name": "flower_yellowA.mtl",
+      "bytes": 136,
+      "sha256": "826ff73bda94dbf2c04a5c4901718e18b638d4fe9014b5674a03f1282010662b",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/flower_yellowA.mtl"
+    },
+    {
+      "name": "flower_purpleB.obj",
+      "bytes": 7113,
+      "sha256": "01481819b904ea31130a1afb80266553136fdd5056e8a618c4904570a0b6a8c9",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/flower_purpleB.obj"
+    },
+    {
+      "name": "flower_purpleB.mtl",
+      "bytes": 128,
+      "sha256": "cb008862b4cd78d9e03095cf6d06e374c1254b98bc336fffad9a94f86c830475",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/flower_purpleB.mtl"
+    },
+    {
+      "name": "mushroom_redGroup.obj",
+      "bytes": 10052,
+      "sha256": "4a9c41474102d000a9594604cb8a79ca7353cc4156a91a55dc058c4fb39658df",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/mushroom_redGroup.obj"
+    },
+    {
+      "name": "mushroom_redGroup.mtl",
+      "bytes": 116,
+      "sha256": "124815ae4e4faf00f4171d5bb9c8eaf88682c711293a742300002658a191846a",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/mushroom_redGroup.mtl"
+    },
+    {
+      "name": "rock_largeA.obj",
+      "bytes": 7889,
+      "sha256": "fbba0afedb8bca589fcf81be46a994075a2614273ef35bf2dcb9d38e26b2b462",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/rock_largeA.obj"
+    },
+    {
+      "name": "rock_largeA.mtl",
+      "bytes": 129,
+      "sha256": "ac7529b5bd71f845f5e4fe0eb86d30cab4f1a470de33d7ed3599e62bddfe192a",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/rock_largeA.mtl"
+    },
+    {
+      "name": "rock_tallA.obj",
+      "bytes": 12472,
+      "sha256": "73de96c9607ebe2544cd5f7fade34faf1b14012ca36d080765f43a4cf6b105bb",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/rock_tallA.obj"
+    },
+    {
+      "name": "rock_tallA.mtl",
+      "bytes": 158,
+      "sha256": "e24300f5b5db87a0c6b0ad69db2d0ae19a923a1f961ff381d3aa1cee6728f5d4",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/rock_tallA.mtl"
+    },
+    {
+      "name": "log.obj",
+      "bytes": 11998,
+      "sha256": "cc40882be1e72a71784b523fd3aca6833bf6659093d5b8d52dc3974f9b40ef7b",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/log.obj"
+    },
+    {
+      "name": "log.mtl",
+      "bytes": 138,
+      "sha256": "106659e3a1928b8d81d9d8749451f2edbcf3c9307445c85b964d9427a296a134",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/log.mtl"
+    },
+    {
+      "name": "stump_roundDetailed.obj",
+      "bytes": 8020,
+      "sha256": "9a8fdaa8d339f3166562d26fb0f7734079b5471dcf500473c5008c88dbfc3179",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/stump_roundDetailed.obj"
+    },
+    {
+      "name": "stump_roundDetailed.mtl",
+      "bytes": 138,
+      "sha256": "106659e3a1928b8d81d9d8749451f2edbcf3c9307445c85b964d9427a296a134",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/stump_roundDetailed.mtl"
+    },
+    {
+      "name": "cliff_cave_rock.obj",
+      "bytes": 4812,
+      "sha256": "f632e5313cdc23aa1d70d9e9d28f9c1d541e0e4fa865c39fd68dfdfffebe96c4",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/cliff_cave_rock.obj"
+    },
+    {
+      "name": "cliff_cave_rock.mtl",
+      "bytes": 83,
+      "sha256": "76126f2248fcb9d5d33ebc2a5c866f1ba32ebbd1e33e4d9b15e9d864f47794c5",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/cliff_cave_rock.mtl"
+    },
+    {
+      "name": "LICENSE.txt",
+      "bytes": 633,
+      "sha256": "c52ab107b8f6a5b82d904912d5d1844d7dafc239208663194423dec4c3f41015",
+      "url": "https://raw.githubusercontent.com/Mcamento8/omnimod-3d-library/ecbc7387232c26e203f71495ba85751ba43252cc/models/kenney/nature-kit/LICENSE.txt"
+    }
+  ]
+}

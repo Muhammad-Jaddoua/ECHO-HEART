@@ -1,0 +1,290 @@
+{
+  "checkpoint": "Jehad_V1.5",
+  "date": "2026-11-22",
+  "base_commit": "39c1af759a78806665fda7e28e62ca64570a6d94",
+  "focus": "Jehad world, audio, particles, collectibles and optional secrets",
+  "policy_tests": {
+    "result": "PASS",
+    "assertions": 6335,
+    "sources": [
+      "EnvironmentMusicV15.cs",
+      "ChestStateV15.cs",
+      "existing CoreTypes.cs"
+    ],
+    "compiler": "C# 9.0 / Microsoft .NET SDK 8.0.404; warnings as errors"
+  },
+  "static_checks": {
+    "result": "PASS",
+    "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.5.unity",
+    "new_csharp_syntax_files": 12,
+    "new_scene_prefab_bank_material_mesh_yaml_documents": 178,
+    "arched_lid_meshes_checked": 2,
+    "music_tracks_distinct_decoded_audio": 6,
+    "ambience_loops": 3,
+    "sfx_assets": 23,
+    "audio_bytes": 1285325,
+    "audio_analysis": [
+      {
+        "name": "Meadow.ogg",
+        "seconds": 32.0,
+        "peak": 0.23066,
+        "rms": 0.04828,
+        "loop_endpoint_step": 0.00812
+      },
+      {
+        "name": "Amber.ogg",
+        "seconds": 32.0,
+        "peak": 0.22466,
+        "rms": 0.05809,
+        "loop_endpoint_step": 0.00334
+      },
+      {
+        "name": "Lake.ogg",
+        "seconds": 32.0,
+        "peak": 0.23567,
+        "rms": 0.05152,
+        "loop_endpoint_step": 0.00414
+      },
+      {
+        "name": "Pine.ogg",
+        "seconds": 32.0,
+        "peak": 0.22283,
+        "rms": 0.05489,
+        "loop_endpoint_step": 0.00465
+      },
+      {
+        "name": "Alpine.ogg",
+        "seconds": 32.0,
+        "peak": 0.21263,
+        "rms": 0.04525,
+        "loop_endpoint_step": 0.00434
+      },
+      {
+        "name": "Guardian.ogg",
+        "seconds": 26.6667,
+        "peak": 0.26801,
+        "rms": 0.0513,
+        "loop_endpoint_step": 0.0091
+      },
+      {
+        "name": "Ambience_Water.ogg",
+        "seconds": 8.0,
+        "peak": 0.12586,
+        "rms": 0.02248,
+        "loop_endpoint_step": 0.00597
+      },
+      {
+        "name": "Ambience_Forest.ogg",
+        "seconds": 8.0,
+        "peak": 0.1103,
+        "rms": 0.02154,
+        "loop_endpoint_step": 0.01086
+      },
+      {
+        "name": "Ambience_AlpineAir.ogg",
+        "seconds": 8.0,
+        "peak": 0.05551,
+        "rms": 0.01322,
+        "loop_endpoint_step": 0.00105
+      },
+      {
+        "name": "Relic.wav",
+        "seconds": 0.3,
+        "peak": 0.49036,
+        "rms": 0.1328,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Chest.wav",
+        "seconds": 0.65,
+        "peak": 0.38455,
+        "rms": 0.1198,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Secret.wav",
+        "seconds": 1.2,
+        "peak": 0.28656,
+        "rms": 0.07715,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Capture.wav",
+        "seconds": 0.65,
+        "peak": 0.37003,
+        "rms": 0.10512,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Hit.wav",
+        "seconds": 0.3,
+        "peak": 0.29904,
+        "rms": 0.0546,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Defeat.wav",
+        "seconds": 0.65,
+        "peak": 0.37277,
+        "rms": 0.0556,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "PlayerHurt.wav",
+        "seconds": 0.3,
+        "peak": 0.34122,
+        "rms": 0.05634,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Death.wav",
+        "seconds": 1.2,
+        "peak": 0.43222,
+        "rms": 0.0576,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Restore.wav",
+        "seconds": 1.2,
+        "peak": 0.30887,
+        "rms": 0.09969,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "EnemyWarning.wav",
+        "seconds": 0.3,
+        "peak": 0.22336,
+        "rms": 0.08034,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "SlamWarning.wav",
+        "seconds": 0.65,
+        "peak": 0.22464,
+        "rms": 0.08034,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "RangedWarning.wav",
+        "seconds": 0.3,
+        "peak": 0.22336,
+        "rms": 0.08034,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Slam.wav",
+        "seconds": 0.3,
+        "peak": 0.56772,
+        "rms": 0.07822,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "RangedShot.wav",
+        "seconds": 0.3,
+        "peak": 0.16254,
+        "rms": 0.03265,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Power.wav",
+        "seconds": 0.3,
+        "peak": 0.32117,
+        "rms": 0.10838,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "StepGrass.wav",
+        "seconds": 0.3,
+        "peak": 0.151,
+        "rms": 0.01621,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "StepStone.wav",
+        "seconds": 0.3,
+        "peak": 0.26575,
+        "rms": 0.02166,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "StepWater.wav",
+        "seconds": 0.3,
+        "peak": 0.36862,
+        "rms": 0.02865,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Jump.wav",
+        "seconds": 0.3,
+        "peak": 0.15167,
+        "rms": 0.03217,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Land.wav",
+        "seconds": 0.3,
+        "peak": 0.6489,
+        "rms": 0.07959,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Sword.wav",
+        "seconds": 0.3,
+        "peak": 0.14877,
+        "rms": 0.03236,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Bow.wav",
+        "seconds": 0.3,
+        "peak": 0.18201,
+        "rms": 0.03166,
+        "loop_endpoint_step": null
+      },
+      {
+        "name": "Fire.wav",
+        "seconds": 0.3,
+        "peak": 0.16608,
+        "rms": 0.03216,
+        "loop_endpoint_step": null
+      }
+    ],
+    "existing_relics": 16,
+    "loose_relics": 14,
+    "chest_rewards_from_existing_relics": 2,
+    "secret_discovery_zones": 2,
+    "pooled_world_sfx_voices": 8,
+    "pooled_particle_bursts": 12,
+    "max_particles_configured": 832,
+    "baseline_files_checked": 483,
+    "modified_baseline_files": [
+      "docs/ASSET_CREDITS.md",
+      "docs/reference/contract-changes.md"
+    ],
+    "unity_compilation_shader_import_playback_playtest": "NOT RUN \u2014 no Unity Editor connected",
+    "new_unity_harness": "WorldPolishReviewV15 supplied, not executed"
+  },
+  "audio_provenance": "Original project synthesis/arrangements; no third-party audio samples",
+  "audio_storage": "Direct Git for these small version-folder files; two scoped attribute overrides verified with git check-attr; root LFS rules unchanged",
+  "preservation": {
+    "existing_remote_blobs": 711,
+    "expected_existing_changes": [
+      "docs/ASSET_CREDITS.md",
+      "docs/reference/contract-changes.md"
+    ],
+    "old_scenes_assets_shared_core_and_teammate_code": "unchanged"
+  },
+  "engine_acceptance": {
+    "result": "NOT RUN",
+    "reason": "No connected Unity Editor",
+    "pending": [
+      "Unity C# and shader compilation/import",
+      "music/SFX listening, loop playback and volume controls",
+      "particle and Guardian warning appearance",
+      "chest animation/collision, real pickup physics and NavMesh carving",
+      "new polish harness and earlier flow/population regressions",
+      "target-PC 1080p performance"
+    ]
+  },
+  "player_combat_scope": "Existing review capsule retained. Production-player code not modified. Successful-attack SFX hooks/assets supplied for later connection."
+}

@@ -84,6 +84,12 @@ namespace Echoheart.Player
             _controller.enabled = false;
             transform.SetPositionAndRotation(position, rotation);
             _controller.enabled = true;
+            ResetMotion();
+        }
+
+        /// <summary>Clears momentum without moving. For flow code that repositions the player itself (respawn hooks).</summary>
+        public void ResetMotion()
+        {
             _horizontalVelocity = Vector3.zero;
             _verticalVelocity = 0f;
             _jumpedSinceGrounded = false;

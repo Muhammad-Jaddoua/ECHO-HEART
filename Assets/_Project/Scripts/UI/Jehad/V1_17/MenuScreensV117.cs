@@ -138,7 +138,7 @@ namespace Echoheart.UI
         private void BuildControls(Transform parent)
         {
             Controls=Card("Controls",parent);Header(Controls,"A LITTLE GUIDANCE","Controls");
-            string[,] rows={{"Move","W A S D"},{"Sprint","Left Shift"},{"Jump","Space"},{"Orbit camera","Hold middle mouse"},{"Zoom camera","Mouse wheel"},{"Interact with chests / Heart","E"},{"Pause / back","Esc"},{"Menus","Arrows / Tab · Enter / Space"}};
+            string[,] rows={{"Move","W A S D"},{"Jump","Space"},{"Inhale an enemy (copy its power)","Hold right mouse"},{"Use the held power","Left mouse"},{"Orbit camera","Move mouse"},{"Interact with chests / Heart","E"},{"Pause / back","Esc"},{"Menus","Arrows / Tab · Enter / Space"}};
             for(int i=0;i<rows.GetLength(0);i++){float y=-190-i*49;_ui.Label(Controls,rows[i,0],40,y,430,40,23,UiFactoryV17.Cream,false,TextAnchor.MiddleLeft);var key=_ui.Panel("Control key",Controls,512,y,548,40,new Color(.10f,.25f,.21f));_ui.Label(key,rows[i,1],12,0,524,40,21,UiFactoryV17.Mint,true,TextAnchor.MiddleCenter);}
             _ui.Label(Controls,"Gamepad: navigate menus with the stick / D-pad, select with South, back with East.",40,-616,1020,42,19,UiFactoryV17.Muted);
             _controlsBack=_ui.Button(Controls,"Back",40,-678,250,()=>_owner.Back(),false,52);

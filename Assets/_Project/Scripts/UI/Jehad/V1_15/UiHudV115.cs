@@ -51,7 +51,7 @@ namespace Echoheart.UI
             _prompt=ui.Panel("Interaction prompt",_root,0,96,650,66,UiFactoryV17.Forest,new Vector2(.5f,0));
             var cap=ui.Panel("Interaction key",_prompt,13,-13,40,40,new Color(.18f,.35f,.28f));_key=ui.Label(cap,"E",0,0,40,40,24,UiFactoryV17.Cream,true,TextAnchor.MiddleCenter);
             _promptText=ui.Label(_prompt,"",70,-4,558,58,24,UiFactoryV17.Cream,true,TextAnchor.MiddleLeft);
-            _controls=ui.Panel("Exploration hints",_root,24,24,720,42,UiFactoryV17.Forest,new Vector2(0,0));ui.Label(_controls,"WASD  Move     Space  Jump     E  Interact     Esc  Pause",15,-1,690,40,17,UiFactoryV17.Muted,false,TextAnchor.MiddleLeft);
+            _controls=ui.Panel("Exploration hints",_root,24,24,1000,42,UiFactoryV17.Forest,new Vector2(0,0));ui.Label(_controls,"WASD  Move     Space  Jump     Hold RMB  Inhale     LMB  Use power     E  Interact     Esc  Pause",15,-1,970,40,17,UiFactoryV17.Muted,false,TextAnchor.MiddleLeft);
             _crosshair=ui.Rect("Ranged aim",_root,0,0,18,18,new Vector2(.5f,.5f));ui.Icon(_crosshair,UiGlyphKindV16.None,0,0,18,UiFactoryV17.Cream);
             _clusters=new[]{vital,power,relic,_objectiveCard,pauseRoot,_boss,_prompt,_controls};
             _boss.gameObject.SetActive(false);_prompt.gameObject.SetActive(false);_crosshair.gameObject.SetActive(false);

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 namespace Echoheart.UI
 {
     public enum UiGlyphKindV16 { Heart, Sword, Bow, Fire, Relic, Cog, Pause, Arrow, Check, None }
+    // Explicit: the icons are AddComponent'ed at runtime and were coming up without a CanvasRenderer (invisible).
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class UiGlyphV16 : MaskableGraphic
     {
         private UiGlyphKindV16 _kind;

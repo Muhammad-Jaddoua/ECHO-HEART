@@ -15,7 +15,9 @@ namespace Echoheart.World
         private EnemyBrain.State _lastState;
         private Renderer[] _renderers;
         private Color[] _baseColors;
-        private readonly MaterialPropertyBlock _block = new MaterialPropertyBlock();
+        // Created lazily: Unity forbids MaterialPropertyBlock in a field initializer when the component is AddComponent'ed.
+        private MaterialPropertyBlock _blockInstance;
+        private MaterialPropertyBlock _block => _blockInstance ??= new MaterialPropertyBlock();
         private float _flashUntil;
         private bool _flashing;
         public void Bind(WorldFeedbackV15 feedback, Health health, EnemyBrain enemy)

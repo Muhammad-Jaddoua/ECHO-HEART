@@ -4,6 +4,8 @@ using UnityEngine.UI;
 namespace Echoheart.UI
 {
     /// <summary>Original scalable rounded panel/border. Uses the default UI material and no texture asset.</summary>
+    // Explicit: the panels are AddComponent'ed at runtime and were coming up without a CanvasRenderer (invisible, raycast errors).
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class UiRoundedV16 : MaskableGraphic
     {
         public float Radius { get; set; } = 16f;

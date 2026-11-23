@@ -30,7 +30,7 @@ namespace Echoheart.Player
         [SerializeField] private PlayerMotor _motor;
         [SerializeField] private PlayerAbilityHolder _holder;
         [SerializeField] private Health _health;
-        [Tooltip("Where enemies are pulled to and where line of sight is checked from.")]
+        [Tooltip("Where enemies are pulled to and where range is measured from.")]
         [SerializeField] private Transform _mouth;
         [Tooltip("Inhale aims along this camera's flat forward. Defaults to the main camera.")]
         [SerializeField] private Transform _aimCamera;
@@ -59,6 +59,7 @@ namespace Echoheart.Player
         [SerializeField] private UnityEvent _onCaptured;
 
         private readonly Collider[] _buffer = new Collider[BufferSize];
+        private CharacterController _controller;
         private State _state = State.Ready;
         private IInhalable _target;
         private Transform _targetRoot;
@@ -72,6 +73,7 @@ namespace Echoheart.Player
 
         private void Awake()
         {
+            _controller = GetComponent<CharacterController>();
             if (_aimCamera == null && Camera.main != null) _aimCamera = Camera.main.transform;
         }
 
@@ -219,9 +221,16 @@ namespace Echoheart.Player
             return best;
         }
 
+        /// <summary>
+        /// Sight is checked from the body centre, not the mouth: the mouth sits in front of the collider and ends up
+        /// inside a wall when the spirit presses against it, and a linecast that starts inside a collider misses it.
+        /// The CharacterController keeps the body centre out of walls.
+        /// </summary>
+        private Vector3 SightOrigin => _controller != null ? transform.TransformPoint(_controller.center) : transform.position;
+
         private bool HasLineOfSight(Vector3 targetPoint, Transform targetRoot)
         {
-            if (!Physics.Linecast(_mouth.position, targetPoint, out RaycastHit hit, _blockerMask, QueryTriggerInteraction.Ignore))
+            if (!Physics.Linecast(SightOrigin, targetPoint, out RaycastHit hit, _blockerMask, QueryTriggerInteraction.Ignore))
                 return true;
             // A blocker collider that belongs to the target itself does not count.
             return hit.transform.IsChildOf(targetRoot);

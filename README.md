@@ -50,6 +50,8 @@ production-player integration remain pending.
 
 Contribution, validation evidence and integration details: [`docs/jehad/README.md`](docs/jehad/README.md).
 
+Tariq and Mohammed: start with the [integration handoff](docs/jehad/INTEGRATION.md) for player/combat bindings, event ownership, retry rules and joint tests.
+
 ## Docs
 
 - Proposal: [`docs/phase1/echoheart_proposal.pdf`](docs/phase1/echoheart_proposal.pdf)

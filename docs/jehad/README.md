@@ -13,7 +13,7 @@ available under `Assets/_Project/Scenes/Jehad`. The integrator-owned
 |---|---|
 | [Contribution](CONTRIBUTION.md) | Delivered systems, ownership, fixes and evidence boundaries |
 | [Acceptance](ACCEPTANCE.md) | One ordered native review route and sign-off matrix |
-| [Integration](INTEGRATION.md) | Production-player, attack-feedback and release-scene bindings |
+| [Integration for Tariq and Mohammed](INTEGRATION.md) | Role checklists, exact Inspector bindings, event/retry ownership and joint release tests |
 | [Performance](PERFORMANCE.md) | Implemented optimizations, measured formatter result and native capture plan |
 | [Phase 3 report](../phase3/final_report.md) | Current report with pending build, media and native evidence identified |
 | [V1.27 note](versions/Jehad_V1.27.md) | Exact combined-checkpoint changes |

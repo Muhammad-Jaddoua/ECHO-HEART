@@ -1,3 +1,4 @@
+using Echoheart.Audio;
 using Echoheart.Core;
 using UnityEngine;
 

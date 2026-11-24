@@ -1,0 +1,272 @@
+{
+  "result": "PASS",
+  "scene": "Assets/_Project/Scenes/Jehad/Jehad_V1.27.unity",
+  "scene_yaml_documents": 137,
+  "compiled_regression": {
+    "result": "PASS",
+    "dotnet_sdk": "8.0.404",
+    "suite_count": 15,
+    "total_assertions": 9436,
+    "compiled_tests": {
+      "flow": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_3/Tests/FlowPolicyTests.csproj",
+        "assertions": 445,
+        "input_sha256": {
+          "Tools/Jehad/V1_3/Tests/FlowPolicyTests.csproj": "079487592763ec3f283e2e888b5c50cd55f21317dc6118d05b57b1a8c6175014",
+          "Tools/Jehad/V1_3/Tests/NuGet.Config": "48d22838c3bc194978be3e5b433a6f146fe81d426155d553ffc5863192b7106f",
+          "Tools/Jehad/V1_3/Tests/Program.cs": "63a36e2c4893986fcd4f6b7a718783ac30339795568ddda423073e7e957bd79b",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5",
+          "Assets/_Project/Scripts/World/Jehad/V1_3/SessionPolicyV13.cs": "3d7b05888c29e514b89d38885bd06e951aefaf16f86351161310bd172ea2f5f5"
+        },
+        "output": "PASS: 445 assertions across 6 flow scenarios; actual SessionPolicyV13 + CoreTypes compiled."
+      },
+      "world_audio_chests": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_5/Tests/WorldPresentationTests.csproj",
+        "assertions": 6335,
+        "input_sha256": {
+          "Tools/Jehad/V1_5/Tests/WorldPresentationTests.csproj": "f081252461e3b730683b1b063761eebb2be12e35ed7a67fd087cdb8e3bad61c1",
+          "Tools/Jehad/V1_5/Tests/NuGet.Config": "9508cae5f76364f56e80eb97cb16493977243cf38e5cca6284e3d74f83b20a2c",
+          "Tools/Jehad/V1_5/Tests/Program.cs": "37f1e3ac096816e0de28fac5b0ca967ac8dd4a42b9e6e8307c027378c970a5dc",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5",
+          "Assets/_Project/Scripts/Audio/Jehad/V1_5/EnvironmentMusicV15.cs": "fac7a2370e234555a837b9350774bb267acfaec0452cba39572de44582d26e6e",
+          "Assets/_Project/Scripts/World/Jehad/V1_5/ChestStateV15.cs": "43a75a27e2b60c6eedbfca73ec1fb152453471c185268101c938c77ba1ff14be"
+        },
+        "output": "PASS: 6335 assertions; actual V1.5 region/mix and chest policy sources compiled against actual CoreTypes (C# 9.0)."
+      },
+      "menu": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_8/Tests/UiPolicyTests.csproj",
+        "assertions": 1586,
+        "input_sha256": {
+          "Tools/Jehad/V1_8/Tests/UiPolicyTests.csproj": "1c609ac06c10f39cec554c9a0726a714dc02c476e796aae7a077230152675b63",
+          "Tools/Jehad/V1_8/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_8/Tests/Program.cs": "c29ba5a4795e803e1cd3a6a2e5d41c06e996698ab2ef2567944cfb710fffe07a",
+          "Assets/_Project/Scripts/UI/Jehad/V1_8/UiFocusHistoryV18.cs": "1481598bed72143adf1d5a177dcf7cbde34df09a40aec935de9c87a3161f76bb",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5",
+          "Assets/_Project/Scripts/UI/Jehad/V1_6/UiPolicyV16.cs": "ca9404937b54a879234beb057a65685de921956aa4a4633a09e683552446dd6e",
+          "Assets/_Project/Scripts/UI/Jehad/V1_7/UiPolicyV17.cs": "4b595a7fc5ba8a5322b194b75932d4a7748a7caa61d04cacf8d8f5aeac3573fa",
+          "Assets/_Project/Scripts/UI/Jehad/V1_7/UiNavigationV17.cs": "69521adf36f582bfa85c2f45856918f3349d646f2c3efe157078384c56cea201",
+          "Assets/_Project/Scripts/UI/Jehad/V1_7/UiDisplayEditV17.cs": "8298c9a27c8b8394045a6d26b8883d8e85b1dbb0de994fcb3307e2c467ec55bb"
+        },
+        "output": "PASS: 1586 assertions; actual V1.8 focus history, V1.7 routing/navigation/display transaction and V1.6 preferences/timer compiled with actual CoreTypes (C# 9.0)."
+      },
+      "layout": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_9/Tests/LayoutTests.csproj",
+        "assertions": 335,
+        "input_sha256": {
+          "Tools/Jehad/V1_9/Tests/LayoutTests.csproj": "8eee7725c422d6d177ff856b1eaba1923d85923b6251df52e82de1e215368ce5",
+          "Tools/Jehad/V1_9/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_9/Tests/Program.cs": "df9a0845393975a0a7e158bba077306620ed2364e338a1f113942834cf17f083",
+          "Assets/_Project/Scripts/UI/Jehad/V1_9/UiLayoutV19.cs": "147112f7ef52391c26332b8380cc8f1e9361684315c3988ba465eeccab3be699"
+        },
+        "output": "PASS: 335 assertions; actual V1.9 safe-area, menu-fit and shared HUD/toast layout model (C# 9.0)."
+      },
+      "notifications": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_10/Tests/NotificationTests.csproj",
+        "assertions": 111,
+        "input_sha256": {
+          "Tools/Jehad/V1_10/Tests/NotificationTests.csproj": "88481a980d625b8648d47774ab05385378bacd0f8e3a22ee01dab9ff217ad378",
+          "Tools/Jehad/V1_10/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_10/Tests/Program.cs": "62e38777725869c837d7b4fc3180c046f028fe449ba887a9348c3a6c15bfcafa",
+          "Assets/_Project/Scripts/UI/Jehad/V1_10/ToastQueueV110.cs": "260c160dec85041ca3b9d02101a3791bc569025673c9f961ec9ae0677ddbca8f",
+          "Assets/_Project/Scripts/UI/Jehad/V1_9/UiLayoutV19.cs": "147112f7ef52391c26332b8380cc8f1e9361684315c3988ba465eeccab3be699"
+        },
+        "output": "PASS: 111 assertions; actual V1.10 notification queue and shared layout model (C# 9.0)."
+      },
+      "guardian_feedback": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_11/Tests/GuardianTests.csproj",
+        "assertions": 51,
+        "input_sha256": {
+          "Tools/Jehad/V1_11/Tests/GuardianTests.csproj": "a964c00e6812bb2364a5d7ee956fd61c8b6437a01c497450dd618b737a287846",
+          "Tools/Jehad/V1_11/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_11/Tests/Program.cs": "2eb1589fbd58a98d28dc7d9cb1c97534f920dd8eb8c8c0cf9c8c4fc35a5de028",
+          "Assets/_Project/Scripts/World/Jehad/V1_11/GuardianCuePolicyV111.cs": "649aabeeaf7d0a5e9dade711713e9200222d16416ebed31171ed035dc7ef4a72"
+        },
+        "output": "PASS: 51 assertions; actual V1.11 Guardian cue lifecycle and geometry (C# 9.0)."
+      },
+      "objectives": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_12/Tests/GuideTests.csproj",
+        "assertions": 80,
+        "input_sha256": {
+          "Tools/Jehad/V1_12/Tests/GuideTests.csproj": "8c607c8c923f3003079663a62f0658a5c716d78cafb077b39837b18bd30a9b2b",
+          "Tools/Jehad/V1_12/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_12/Tests/Program.cs": "62ccd86aaa0d093d2354ebd27182de9fc961e1d9f35377d2ebc9115f7aa858f2",
+          "Assets/_Project/Scripts/UI/Jehad/V1_12/ObjectiveGuidePolicyV112.cs": "fb92f38b2c9ffdf42c1e8689d3f6f8acbeeef63dfd26b6a13415621d8ceaea02",
+          "Assets/_Project/Scripts/UI/Jehad/V1_9/UiLayoutV19.cs": "147112f7ef52391c26332b8380cc8f1e9361684315c3988ba465eeccab3be699",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5"
+        },
+        "output": "PASS: 80 assertions; actual V1.12 objective visibility and bearing placement with CoreTypes/shared layout (C# 9.0)."
+      },
+      "relic_glints": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_13/Tests/GlintTests.csproj",
+        "assertions": 61,
+        "input_sha256": {
+          "Tools/Jehad/V1_13/Tests/GlintTests.csproj": "c1f34989b8287ea0c85c718b7f5aa0d32debcc73f442abbaa1dd66e5b0856f2b",
+          "Tools/Jehad/V1_13/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_13/Tests/Program.cs": "7bed0d010d4ff326c62c17f147682e051e21450eb35a41b0c35b16c6800ca27b",
+          "Assets/_Project/Scripts/World/Jehad/V1_13/RelicGlintSelectionV113.cs": "87d6f9ae0716c1e84aae163db1bb2d3a78f22f3fc5fbf43a2a16033ef23b9e4a"
+        },
+        "output": "PASS: 61 assertions; actual V1.13 glint eligibility, bounded selection, stable slots, hysteresis and fade (C# 9.0)."
+      },
+      "preferences": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_14/Tests/PreferenceTests.csproj",
+        "assertions": 79,
+        "input_sha256": {
+          "Tools/Jehad/V1_14/Tests/PreferenceTests.csproj": "34120ef5fa9733ba8ff2d352fcacc257ea841aab74c04a569ab733c572ac94c0",
+          "Tools/Jehad/V1_14/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_14/Tests/Program.cs": "a64c0810e6d4018d9559aed5726e91514db924a394d3a3386e9a55497c5184f3",
+          "Assets/_Project/Scripts/UI/Jehad/V1_14/PreferenceCodecV114.cs": "725e946b5904c2799935e8e1dee82911ea3bfeb1c1ae59a34b3770a3b85b1d86",
+          "Assets/_Project/Scripts/UI/Jehad/V1_6/UiPolicyV16.cs": "ca9404937b54a879234beb057a65685de921956aa4a4633a09e683552446dd6e",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5"
+        },
+        "output": "PASS: 79 assertions; actual V1.14 preference codec and save scheduling with actual UiValuesV16/CoreTypes (C# 9.0)."
+      },
+      "vitality": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_15/Tests/VitalTests.csproj",
+        "assertions": 41,
+        "input_sha256": {
+          "Tools/Jehad/V1_15/Tests/VitalTests.csproj": "c627d819028ed1ebc28f5ebdb988e189b76a12e6ea643e3cd2ab2fdd2a64685d",
+          "Tools/Jehad/V1_15/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_15/Tests/Program.cs": "c785a4debf984fcb02086123ca7e434a2e5826da23b56b61a91509485eb8821e",
+          "Assets/_Project/Scripts/UI/Jehad/V1_15/HealthBarV115.cs": "a352b360733d34ae45238926ac12e82c65d56b80632994c008027eda79ad2063"
+        },
+        "output": "PASS: 41 assertions; actual V1.15 immediate health/loss trail model, reset and reduced-motion behavior (C# 9.0)."
+      },
+      "title_vista": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_16/Tests/VistaTests.csproj",
+        "assertions": 30,
+        "input_sha256": {
+          "Tools/Jehad/V1_16/Tests/VistaTests.csproj": "c2fb0e2491fa849c415a25aaaa1138bef4fbc6ab27e5aa06886745788960ce3f",
+          "Tools/Jehad/V1_16/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_16/Tests/Program.cs": "4c05b89d2113c4d54a85be43b4ec27baed45e038b372cd40019728c064a19a4d",
+          "Assets/_Project/Scripts/UI/Jehad/V1_16/TitleVistaMotionV116.cs": "05b34fb743ef567e82c99fd0626b57985abb62b7b54b19970f5b028fa17aa15e"
+        },
+        "output": "PASS: 30 assertions; actual V1.16 title vista motion, bounds, holds, reduced motion and bounded frame steps (C# 9.0)."
+      },
+      "chest_reveal": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_20/Tests/RevealTests.csproj",
+        "assertions": 28,
+        "input_sha256": {
+          "Tools/Jehad/V1_20/Tests/RevealTests.csproj": "1924187167fc0fb32e730f3b93ccd92b5c5907e8e4b3c1bc85713df2a0d1976c",
+          "Tools/Jehad/V1_20/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_20/Tests/Program.cs": "018e91b139aa911322e3de20baddf18b097a7a4d7ef91434ba759c23b209267e",
+          "Assets/_Project/Scripts/World/Jehad/V1_20/ChestRevealPolicyV120.cs": "6c245d7582829ba8c0266909e0dda727bfddee5ad466ea206f54f66446de5d6b",
+          "Assets/_Project/Scripts/World/Jehad/V1_5/ChestStateV15.cs": "43a75a27e2b60c6eedbfca73ec1fb152453471c185268101c938c77ba1ff14be",
+          "Assets/_Project/Scripts/Core/CoreTypes.cs": "69df97b0ac40ad4f8db28a674c194c74eec6502db36590283106335cc3f89bc5"
+        },
+        "output": "PASS: 28 assertions; actual V1.20 lid reveal policy with original chest/reset policy and CoreTypes (C# 9.0)."
+      },
+      "movement_cues": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_21/Tests/MovementTests.csproj",
+        "assertions": 92,
+        "input_sha256": {
+          "Tools/Jehad/V1_21/Tests/MovementTests.csproj": "842c16a7fbc2913d443d3bc3ea1f81a842386a9ad16066a3e4eb0773bbce967a",
+          "Tools/Jehad/V1_21/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_21/Tests/Program.cs": "00742b7644cc75ed419ab40f1b3025a67219a65f2085c6e73ff8b5477c0056bd",
+          "Assets/_Project/Scripts/World/Jehad/V1_21/MovementCuePolicyV121.cs": "872c6ce4c4156fb94622ff947486c4a672deda65142da3f32e034ef9469b0706"
+        },
+        "output": "PASS: 92 assertions; actual V1.21 movement cue policy (C# 9.0, no Unity stubs)."
+      },
+      "hurt_position": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_23/Tests/HitPointTests.csproj",
+        "assertions": 39,
+        "input_sha256": {
+          "Tools/Jehad/V1_23/Tests/HitPointTests.csproj": "ae946867352e5c6f6284f7908f91072bcde46ec845aa3265c8d6a36d2565c68f",
+          "Tools/Jehad/V1_23/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_23/Tests/Program.cs": "f1ddb414b7ba978f359010f3b0b13ceb670365d25cce0f1b3dea0718aed9dda1",
+          "Assets/_Project/Scripts/World/Jehad/V1_23/HitFeedbackPointV123.cs": "2e9fa06ca7c5b1cd48043d648d4fa4975203b21d939e7520fe70b132d28b41d8"
+        },
+        "output": "PASS: 39 assertions; actual V1.23 player hit-point policy (C# 9.0, no Unity stubs)."
+      },
+      "counter_text": {
+        "result": "PASS",
+        "project": "Tools/Jehad/V1_25/Tests/CountTextTests.csproj",
+        "assertions": 123,
+        "input_sha256": {
+          "Tools/Jehad/V1_25/Tests/CountTextTests.csproj": "181ef93cba9b8136752f0fea86cad7424420ff8c3a96174c6deda96b6cd1a208",
+          "Tools/Jehad/V1_25/Tests/NuGet.Config": "2142cfb2dfa2c7feefbe40fabcc68b0dfecadafa99a1db9b70239d977cf2a7ef",
+          "Tools/Jehad/V1_25/Tests/Program.cs": "209802a7a510aa7b9874bc288f025edbc8d2a9bf725371513c38ff518c77006a",
+          "Assets/_Project/Scripts/UI/Jehad/V1_25/CountTextV125.cs": "e46207f267d6cb8f5bb6d2f774cf720ccd8aca09fd17f24adb2344556f664c27"
+        },
+        "output": "PASS: 123 assertions; actual V1.25 count-text cache (C# 9.0, no Unity stubs).\n{\"iterations\":10000,\"cached_display_bytes\":0,\"previous_display_expression_bytes\":1680000,\"cached_pending_bytes\":0,\"previous_pending_expression_bytes\":400000,\"scope\":\"Managed allocation microbenchmark of formatting only under .NET 8; not Unity UI/GC/frame-time profiling.\"}"
+      }
+    },
+    "managed_counter_microbenchmark": {
+      "iterations": 10000,
+      "cached_display_bytes": 0,
+      "previous_display_expression_bytes": 1680000,
+      "cached_pending_bytes": 0,
+      "previous_pending_expression_bytes": 400000,
+      "scope": "Managed allocation microbenchmark of formatting only under .NET 8; not Unity UI/GC/frame-time profiling."
+    },
+    "scope": "Actual pure C# sources only; no Unity compilation, stubs or native execution."
+  },
+  "namespace_audit": {
+    "result": "PASS",
+    "project_source_files_indexed": 160,
+    "distinct_top_level_project_type_names": 193,
+    "indexed_sources_sha256": "101f7f615e7aeeabb8516c9531801818dd1975c80b80dfcd5cdb868a6b2738be",
+    "jehad_source_files_audited": 124,
+    "configurations": [
+      "Editor",
+      "Player"
+    ],
+    "candidate_references_checked": 5760,
+    "missing_namespace_candidates": [],
+    "syntax_errors": [],
+    "scope": "Roslyn syntax/import audit of known top-level Echoheart type names in Jehad scripts. No Unity compilation, external API validation, symbol binding or gameplay execution."
+  },
+  "scene_matches_v126_after_removing_editoronly_review_and_labels": true,
+  "original_world_sources_restored_after_reversing_paused_snapshot_and_copy_changes": true,
+  "readme_change_limited_to_jehad_checkpoint_section": true,
+  "pickup_feedback_held_only_during_pause_unless_retry_snapshot_requested": true,
+  "authored_audio_headers_and_guid_references_checked": 32,
+  "audio_header_formats": {
+    "wav": 23,
+    "ogg_vorbis": 9
+  },
+  "authored_music_tracks": 6,
+  "authored_sfx_clips": 23,
+  "authored_ambient_loops": 3,
+  "nature_pack_license_files_and_credits_present": true,
+  "authored_chest_refs_checked": 2,
+  "review_capsule_confirmed": true,
+  "handoff_documents_and_links_checked": [
+    "docs/jehad/README.md",
+    "docs/jehad/CONTRIBUTION.md",
+    "docs/jehad/ACCEPTANCE.md",
+    "docs/jehad/INTEGRATION.md",
+    "docs/jehad/PERFORMANCE.md",
+    "docs/phase3/final_report.md",
+    "docs/jehad/versions/Jehad_V1.27.md",
+    "Tools/Jehad/V1_27/README.md"
+  ],
+  "project_sources_compared_to_remote_after_reversing_edits": 159,
+  "baseline_files_checked": 1075,
+  "modified_baseline_files": [
+    "Assets/_Project/Scripts/World/Jehad/V1_5/WorldFeedbackV15.cs",
+    "Assets/_Project/Scripts/World/Jehad/V1_10/WorldNoticesV110.cs",
+    "docs/reference/contract-changes.md"
+  ],
+  "new_runtime_components": 0,
+  "single_audio_listener": true,
+  "release_status": "INTEGRATION CANDIDATE \u2014 native acceptance and production player pending",
+  "unity_compile_import_native_actions_physics_render_audio_mix_gpu_cpu_frame_times_playtests_build_video_release": "NOT RUN / NOT PROVIDED \u2014 no Unity Editor connected; model/source evidence is not final-build evidence",
+  "builder_second_run_files_written": 0,
+  "checked_on": "2026-11-23",
+  "course_phase3_source": "https://github.com/gamedevkfupm/swe402/blob/main/project/Phase3_Final_Build_Description.md",
+  "course_phase3_blob_sha": "38ead729687dc351cb56201cb44e72efdc5f9e30"
+}

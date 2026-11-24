@@ -85,7 +85,12 @@ namespace Echoheart.World
 
         public void Pause()
         {
-            if (_ready && !_transitioning && _policy.Pause()) PublishState();
+            if (_ready && !_transitioning && _policy.Pause())
+            {
+                // A pickup can precede the counter's next poll; publish a current pause summary.
+                if (_relics != null) _relics.Refresh(false);
+                PublishState();
+            }
         }
 
         public void Resume()

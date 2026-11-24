@@ -90,7 +90,7 @@ namespace Echoheart.World
                     _particles.Burst(WorldBurstV15.Relic, relic.transform.position);
                     if (_toast != null) _toast.Show("Relic found  ·  " + Friendly(relic.DisplayName));
                 }
-                _collected[i] = relic.Collected;
+                if (_flow.State != GameState.Paused || _refresh) _collected[i] = relic.Collected;
             }
             if (_flow.Player.Player != null)
             {

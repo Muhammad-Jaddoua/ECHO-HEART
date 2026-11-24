@@ -41,6 +41,17 @@ rewards, and defeats the Corrupted Guardian to restore the Island Heart.
 `File → Build Profiles → Windows` → scene list contains only `Echoheart.unity` → Build into `Builds/` (git-ignored).
 Builds for each milestone are attached to the GitHub Release for that tag.
 
+## Jehad world, UI and audio checkpoint
+
+The combined review scene is [`Jehad_V1.27.unity`](Assets/_Project/Scenes/Jehad/Jehad_V1.27.unity).
+It contains Jehad's world, collectibles/secrets, flow, menus, music, SFX and VFX
+with the movement-only review player. Native Unity acceptance, profiling and
+production-player integration remain pending.
+
+Contribution, validation evidence and integration details: [`docs/jehad/README.md`](docs/jehad/README.md).
+
+Tariq and Mohammed: start with the [integration handoff](docs/jehad/INTEGRATION.md) for player/combat bindings, event ownership, retry rules and joint tests.
+
 ## Docs
 
 - Proposal: [`docs/phase1/echoheart_proposal.pdf`](docs/phase1/echoheart_proposal.pdf)

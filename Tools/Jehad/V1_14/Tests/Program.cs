@@ -35,7 +35,7 @@ internal static class Program
         foreach(string bad in new[]{null,"","1","2|0.2|0.3|1|12","01|0.2|0.3|1|12","1|0.2|0.3|1","1|0.2|0.3|1|12|extra","1||0.3|1|12","1|0,2|0.3|1|12","1|NaN|0.3|1|12","1|0.2|Infinity|1|12","1|0.2|0.3|-Infinity|12","1|1e999|0.3|1|12","1|0.2|0.3|1|-1","1|0.2|0.3|1|16","1|0.2|0.3|1|+3","1|0.2|0.3|1|1.0","1|0.2|0.3|1|2147483648",new string('x',129)})
             Check(!PreferenceCodecV114.TryDecode(bad,out decoded)&&Same(decoded,defaults),"Malformed/unsupported record did not fail safely to defaults.");
         Check(PreferenceCodecV114.TryDecode("1|-2|5|9|0",out decoded)&&decoded.Music==0&&decoded.Sfx==1&&decoded.HudScale==1.15f,"Finite edited values were not clamped by the actual settings model.");
-        Check(PreferenceCodecV114.TryDecode("1|0|0|0|15",out decoded)&&decoded.HudScale==.85f&&decoded.Music==0&&decoded.Sfx==0,"Mute/minimum HUD values are not preserved.");
+        Check(PreferenceCodecV114.TryDecode("1|0|0|0|15",out decoded)&&decoded.HudScale==.5f&&decoded.Music==0&&decoded.Sfx==0,"Mute/minimum HUD values are not preserved.");
         var nonfinite=defaults;nonfinite.Music=float.NaN;nonfinite.Sfx=float.PositiveInfinity;nonfinite.HudScale=float.NegativeInfinity;
         Check(PreferenceCodecV114.Encode(nonfinite)==initial,"Encoding bypassed actual settings sanitization.");
         var save=new PreferenceSaveV114(defaults);

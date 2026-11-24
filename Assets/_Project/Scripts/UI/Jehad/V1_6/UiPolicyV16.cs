@@ -44,7 +44,7 @@ namespace Echoheart.UI
         private static float Safe(float value, float fallback, float low, float high) => float.IsNaN(value) || float.IsInfinity(value) ? fallback : Math.Max(low, Math.Min(high, value));
         public UiValuesV16 Sanitized()
         {
-            var value = this; value.Music = Safe(Music, .65f, 0f, 1f); value.Sfx = Safe(Sfx, .8f, 0f, 1f); value.HudScale = Safe(HudScale, 1f, .85f, 1.15f); return value;
+            var value = this; value.Music = Safe(Music, .65f, 0f, 1f); value.Sfx = Safe(Sfx, .8f, 0f, 1f); value.HudScale = Safe(HudScale, 1f, .5f, 1.15f); return value;
         }
     }
     public sealed class UiDisplayTimerV16

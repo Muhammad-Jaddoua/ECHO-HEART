@@ -60,15 +60,17 @@ namespace Echoheart.UI
         public void ReadDraft() { if (!Previewing) { RefreshResolutions(); _edit.Sync(Read()); Changed?.Invoke(); } }
         public void DiscardDisplay() { _edit.Discard(); Changed?.Invoke(); }
         private void Stage(UiDisplayValueV17 value) { if (_edit.Stage(value)) Changed?.Invoke(); }
-        public void CycleResolution()
+        // step is +1 (next) or -1 (previous) so an overshoot can be undone without wrapping all the way round.
+        private static int Wrap(int index, int step, int count) => ((index + step) % count + count) % count;
+        public void CycleResolution(int step = 1)
         {
-            int index = _resolutions.IndexOf(DraftResolution); Vector2Int size = _resolutions[(index + 1) % _resolutions.Count];
+            int index = _resolutions.IndexOf(DraftResolution); Vector2Int size = _resolutions[Wrap(Mathf.Max(index, 0), step, _resolutions.Count)];
             var draft = _edit.Draft; draft.Width = size.x; draft.Height = size.y; Stage(draft);
         }
-        public void CycleQuality() { var draft=_edit.Draft; draft.Quality=(draft.Quality+1)%Mathf.Max(1,QualitySettings.names.Length); Stage(draft); }
+        public void CycleQuality(int step = 1) { var draft=_edit.Draft; draft.Quality=Wrap(draft.Quality,step,Mathf.Max(1,QualitySettings.names.Length)); Stage(draft); }
         public void ToggleFullscreen() { var draft=_edit.Draft; draft.Mode=draft.Mode==(int)FullScreenMode.Windowed?(int)FullScreenMode.FullScreenWindow:(int)FullScreenMode.Windowed; Stage(draft); }
         public void ToggleVsync() { var draft=_edit.Draft; draft.Sync=draft.Sync>0?0:1; Stage(draft); }
-        public void CycleLimit() { var draft=_edit.Draft; draft.Limit=Limits[(Array.IndexOf(Limits,draft.Limit)+1)%Limits.Length]; Stage(draft); }
+        public void CycleLimit(int step = 1) { var draft=_edit.Draft; draft.Limit=Limits[Wrap(Mathf.Max(Array.IndexOf(Limits,draft.Limit),0),step,Limits.Length)]; Stage(draft); }
         public bool PreviewDisplay()
         {
             if (!_edit.Begin(Read())) return false;

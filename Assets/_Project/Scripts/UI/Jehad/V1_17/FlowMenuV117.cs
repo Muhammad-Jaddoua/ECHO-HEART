@@ -31,6 +31,8 @@ namespace Echoheart.UI
         private Action _pending;
         private GameObject _previousFocus;
         private bool _bossVisible,_bossDefeated;
+        // The HUD-scale slider also sizes the menu cards; applied after the mouse is released so the slider doesn't move under the cursor mid-drag.
+        private bool _cardScaleDirty;private float _cardScale=1f;
         private int _backFrame=-1;
         private int _releaseInputAt=-1;
         private int _displayReadyFrame;
@@ -87,6 +89,7 @@ namespace Echoheart.UI
             if(_views==null)return;
             if(_releaseInputAt>=0&&Time.frameCount>=_releaseInputAt){_releaseInputAt=-1;if(_flow.State==GameState.Playing)_flow.Player.SetControlsEnabled(true);}
             if(Screen.width!=_width||Screen.height!=_height||Screen.safeArea!=_lastSafe||_safe.rect.size!=_lastLayoutSize)SafeArea();
+            if(_cardScaleDirty&&(Mouse.current==null||!Mouse.current.leftButton.isPressed)){_cardScaleDirty=false;ScaleCards();}
             _fade.alpha=_settings.Values.ReduceMotion?1f:Mathf.MoveTowards(_fade.alpha,1f,Time.unscaledDeltaTime*6f);
             _hud.Tick(_settings.Values);
             if(_route.Modal==UiModalV17.Display){_views.ModalBody.text=_displayCountdownText.Format(Mathf.CeilToInt(_settings.PreviewSeconds));bool ready=Time.frameCount>=_displayReadyFrame;if(_views.ConfirmButton.interactable!=ready){_views.ConfirmButton.interactable=ready;RefreshNavigation();}}
@@ -110,11 +113,17 @@ namespace Echoheart.UI
             _safe.anchorMin=new Vector2(safe.X/_width,safe.Y/_height);_safe.anchorMax=new Vector2((safe.X+safe.Width)/_width,(safe.Y+safe.Height)/_height);_safe.offsetMin=_safe.offsetMax=Vector2.zero;
             Canvas.ForceUpdateCanvases();_lastLayoutSize=_safe.rect.size;
             if(_views==null)return;
-            foreach(RectTransform card in new[]{_views.Title,_views.Pause,_views.Death,_views.Complete,_views.Settings,_views.Controls,_views.Credits,_views.ModalCard})
-                card.localScale=Vector3.one*UiLayoutV19.CardScale(_lastLayoutSize.x,_lastLayoutSize.y,card.sizeDelta.x,card.sizeDelta.y);
+            ScaleCards();
             _hud.Fit(_lastLayoutSize.x,_lastLayoutSize.y);RefreshNavigation();
         }
         public void RefreshLayout() { if(_safe!=null)SafeArea(); }
+        private void ScaleCards()
+        {
+            _cardScale=_settings!=null?_settings.Values.HudScale:1f;
+            // Grow/shrink by the player's scale, but never past what fits on screen.
+            foreach(RectTransform card in new[]{_views.Title,_views.Pause,_views.Death,_views.Complete,_views.Settings,_views.Controls,_views.Credits,_views.ModalCard})
+                card.localScale=Vector3.one*_cardScale*UiLayoutV19.CardScale(_lastLayoutSize.x,_lastLayoutSize.y,card.sizeDelta.x*_cardScale,card.sizeDelta.y*_cardScale);
+        }
         private void Health(int value,int maximum){if(_hud!=null)_hud.Health(value,maximum);}
         private void Power(AbilityDefinition value){if(_hud!=null){_hud.Power(value);_hud.Apply(_settings.Values);}}
         private void Relics(int value,int total){if(_hud!=null)_hud.Relics(value,total);}
@@ -267,6 +276,7 @@ namespace Echoheart.UI
         private void PreferencesChanged()
         {
             if(_views==null)return;_views.RefreshSettings();_ui.Contrast(_settings.Values.HighContrast);_hud.Apply(_settings.Values);RefreshNavigation();
+            if(!Mathf.Approximately(_settings.Values.HudScale,_cardScale))_cardScaleDirty=true;
             if(_route.State!=GameState.Playing&&!ValidFocus()&&_focus.Count>0)Select(_focus[0].gameObject);
         }
         public void PlayPress(){if(_audio!=null)_audio.PlayPress();}

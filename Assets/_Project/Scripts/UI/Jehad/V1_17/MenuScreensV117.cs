@@ -99,13 +99,13 @@ namespace Echoheart.UI
             _sfx=_ui.Slider(_tabs[0],"Sound effects",304,-346,742,.8f,0,1,v=>{var p=_settings.Values;p.Sfx=v;_settings.Set(p);},out _sfxValue);
             _ui.Button(_tabs[0],"Preview sound",304,-480,280,()=>{});
             _ui.Label(_tabs[0],"Music continues quietly while paused.\nSound effects include footsteps, ambience and UI.",304,-568,742,70,21,UiFactoryV17.Muted);
-            _resolution=DisplayRow(_tabs[1],"Resolution",-206,()=>_settings.CycleResolution());
+            _resolution=DisplayRow(_tabs[1],"Resolution",-206,()=>_settings.CycleResolution(),()=>_settings.CycleResolution(-1));
             _mode=DisplayRow(_tabs[1],"Display mode",-286,()=>_settings.ToggleFullscreen());
-            _quality=DisplayRow(_tabs[1],"Quality",-366,()=>_settings.CycleQuality());
+            _quality=DisplayRow(_tabs[1],"Quality",-366,()=>_settings.CycleQuality(),()=>_settings.CycleQuality(-1));
             _sync=DisplayRow(_tabs[1],"VSync",-446,()=>_settings.ToggleVsync());
-            _limit=DisplayRow(_tabs[1],"Frame limit",-526,()=>_settings.CycleLimit());_limitButton=_limit.GetComponentInParent<Button>();
+            _limit=DisplayRow(_tabs[1],"Frame limit",-526,()=>_settings.CycleLimit(),()=>_settings.CycleLimit(-1));_limitButton=_limit.GetComponentInParent<Button>();
             _apply=_ui.Button(_tabs[1],"Apply display",772,-664,274,()=>_owner.PreviewDisplay(),true,58);
-            _hud=_ui.Slider(_tabs[2],"HUD scale",304,-206,742,1,.85f,1.15f,v=>{var p=_settings.Values;p.HudScale=v;_settings.Set(p);},out _hudValue);
+            _hud=_ui.Slider(_tabs[2],"Interface scale",304,-206,742,1,.5f,1.15f,v=>{var p=_settings.Values;p.HudScale=v;_settings.Set(p);},out _hudValue);
             _contrast=Toggle(_tabs[2],"High contrast",-324,()=>{var p=_settings.Values;p.HighContrast=!p.HighContrast;_settings.Set(p);});
             _motion=Toggle(_tabs[2],"Reduce UI motion",-394,()=>{var p=_settings.Values;p.ReduceMotion=!p.ReduceMotion;_settings.Set(p);});
             _hints=Toggle(_tabs[2],"Objective and control hints",-464,()=>{var p=_settings.Values;p.Hints=!p.Hints;_settings.Set(p);});
@@ -115,8 +115,21 @@ namespace Echoheart.UI
             SettingsStatus=_ui.Label(Settings,_owner.PreferenceStatus,304,-624,742,24,17,UiFactoryV17.Muted);
             SwitchTab(0,false);
         }
-        private Text DisplayRow(Transform parent,string label,float y,Action action)
-        { _ui.Label(parent,label,304,y,370,44,24,UiFactoryV17.Cream,true,TextAnchor.MiddleLeft);var b=_ui.Button(parent,label+" value",720,y+6,326,action,false,54);_ui.Icon(b.transform,UiGlyphKindV16.Arrow,298,-17,20,UiFactoryV17.Muted);Text value=b.GetComponentInChildren<Text>();value.rectTransform.sizeDelta=new Vector2(260,46);return value; }
+        // Rows with a list of values are one button: the left half steps back, the right half (and Enter/gamepad) steps forward.
+        private Text DisplayRow(Transform parent,string label,float y,Action action,Action previous=null)
+        {
+            _ui.Label(parent,label,304,y,370,44,24,UiFactoryV17.Cream,true,TextAnchor.MiddleLeft);
+            UiSplitPressV117 split=null;
+            Action press=previous==null?action:()=>{if(split.ConsumeLeft())previous();else action();};
+            var b=_ui.Button(parent,label+" value",720,y+6,326,press,false,54);_ui.Icon(b.transform,UiGlyphKindV16.Arrow,298,-17,20,UiFactoryV17.Muted);
+            if(previous!=null)
+            {
+                split=b.gameObject.AddComponent<UiSplitPressV117>();
+                var icon=_ui.Icon(b.transform,UiGlyphKindV16.Arrow,0,0,20,UiFactoryV17.Muted).rectTransform;
+                icon.pivot=new Vector2(.5f,.5f);icon.anchoredPosition=new Vector2(18,-27);icon.localScale=new Vector3(-1,1,1);
+            }
+            Text value=b.GetComponentInChildren<Text>();value.rectTransform.sizeDelta=new Vector2(260,46);return value;
+        }
         private Button Toggle(Transform parent,string label,float y,Action action)
         { var b=_ui.Button(parent,label,304,y,742,action,false,56);b.GetComponentInChildren<Text>().alignment=TextAnchor.MiddleLeft;return b; }
         public void SwitchTab(int index,bool notify=true)

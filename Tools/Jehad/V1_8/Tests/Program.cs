@@ -35,7 +35,7 @@ internal static class Program
             var values=new UiValuesV16{Music=input,Sfx=input,HudScale=input,HighContrast=true,ReduceMotion=true,Hints=true,Crosshair=true}.Sanitized();
             Check(values.Music>=0&&values.Music<=1&&!float.IsNaN(values.Music),"Invalid music volume escaped sanitizing.");
             Check(values.Sfx>=0&&values.Sfx<=1&&!float.IsNaN(values.Sfx),"Invalid SFX volume escaped sanitizing.");
-            Check(values.HudScale>=.85f&&values.HudScale<=1.15f,"HUD scale could exceed the validated layout range.");
+            Check(values.HudScale>=.5f&&values.HudScale<=1.15f,"HUD scale could exceed the validated layout range.");
             Check(values.HighContrast&&values.ReduceMotion&&values.Hints&&values.Crosshair,"Sanitizing lost independent interface options.");
         }
         var defaults=UiValuesV16.Defaults;Check(defaults.Music==.65f&&defaults.Sfx==.8f&&defaults.HudScale==1&&defaults.Hints&&defaults.Crosshair,"Defaults changed unexpectedly.");

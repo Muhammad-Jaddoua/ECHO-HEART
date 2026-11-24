@@ -71,6 +71,13 @@ namespace Echoheart.Player
             if (locked) _horizontalVelocity = Vector3.zero;
         }
 
+        /// <summary>Turns the spirit instantly to a flat world direction (attacking or inhaling toward the camera aim).</summary>
+        public void FaceDirection(Vector3 direction)
+        {
+            direction.y = 0f;
+            if (direction.sqrMagnitude > 0.0001f) transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
+
         /// <summary>Moves the player instantly, clearing momentum. CharacterController must be off to set position.</summary>
         public void Teleport(Vector3 position, Quaternion rotation)
         {

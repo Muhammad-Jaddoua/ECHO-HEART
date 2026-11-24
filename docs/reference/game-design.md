@@ -72,6 +72,7 @@ Sword variant = close attack; Bow & Fire variants reuse ranged behaviour. Short 
 | Input | Action |
 |---|---|
 | WASD | Move (camera-relative) |
+| Hold Left Shift | Run (1.6x move speed; added 24 Nov after playtest feedback) |
 | Mouse | Orbit camera |
 | Space | Jump |
 | Left click | Attack with current power |

@@ -77,6 +77,9 @@ namespace Echoheart.Player
             if (ability != null) _onEquipped.Invoke();
         }
 
+        /// <summary>Drops the held power. Same as Equip(null); exists so inspector events can wire it without an argument.</summary>
+        public void ClearAbility() => Equip(null);
+
         public void ResetFor(RetryScope scope)
         {
             // Boss retry keeps the power chosen for the fight; every other retry starts powerless (game-design.md).

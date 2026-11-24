@@ -59,7 +59,31 @@ namespace Echoheart.Player
         {
             _isPlaying = state == GameState.Playing;
             SetCursorLocked(_isPlaying);
+            // The title screen drives the Main Camera itself (scenic view). With this camera live the
+            // CinemachineBrain would overwrite that pose every frame, so step aside only on Title.
+            CinemachineCamera playerCamera = PlayerCamera;
+            if (playerCamera != null) playerCamera.enabled = state != GameState.Title;
         }
+
+        /// <summary>
+        /// Puts the orbit behind the player and cuts instead of blending. Call after a respawn/teleport so the view
+        /// does not sweep across the map from the old position.
+        /// </summary>
+        public void SnapBehindPlayer()
+        {
+            InputAxis horizontal = _orbit.HorizontalAxis;
+            horizontal.Value = horizontal.ClampValue(_orbit.FollowTarget != null ? _orbit.FollowTarget.eulerAngles.y : 0f);
+            _orbit.HorizontalAxis = horizontal;
+
+            InputAxis vertical = _orbit.VerticalAxis;
+            vertical.Value = vertical.Center;
+            _orbit.VerticalAxis = vertical;
+
+            CinemachineCamera playerCamera = PlayerCamera;
+            if (playerCamera != null) playerCamera.PreviousStateIsValid = false;
+        }
+
+        private CinemachineCamera PlayerCamera => _orbit != null ? _orbit.GetComponent<CinemachineCamera>() : null;
 
         private static void SetCursorLocked(bool locked)
         {

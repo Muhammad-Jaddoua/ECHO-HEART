@@ -6,15 +6,15 @@
 
 ## 1. Checkpoint summary and reviewed versions
 
-The latest integrated slice is **`Assets/_Project/Scenes/Echoheart.unity` on `feature/20-integration`**, submitted in [PR #36][pr36]. It combines the production player with Jehad V1.25's world, menus, HUD, audio and retry/Heart flow. Tariq reports an end-to-end Windows RC1 playthrough, including death/retry and Play Again. The integration is awaiting merge and review; the tested branch and merged `main` are therefore recorded separately.
+The latest integrated slice is **`Assets/_Project/Scenes/Echoheart.unity` on `feature/20-integration`**, submitted in [PR #36][pr36]. It combines the production player with Jehad V1.25's world, menus, HUD, audio and retry/Heart flow. On 24 November `main` (Jehad V1.26/V1.27, PR #34 and this checkpoint) was merged into the branch, so the integrated scene now runs the V1.26/V1.27 shared-script fixes. Tariq reports an end-to-end Windows RC1 playthrough, including death/retry and Play Again. The integration is awaiting merge and review; the tested branch and merged `main` are therefore recorded separately.
 
 | Snapshot | Revision | Evidence / limitation |
 |---|---|---|
-| Integrated playable candidate | [`75cd32f` — Echoheart.unity][integrated-scene] | PR #36 reports Editor checks and a 136 MB Windows RC1 with zero build errors; no downloadable build or matching recording is linked in the inspected PR |
-| Merged repository | [`798ec6b`][main-commit] | Movement/camera PR #34 is merged; inhale PR #35 and integration PR #36 remain open |
-| Latest Jehad review checkpoint | [Jehad_V1.27.unity](../../Assets/_Project/Scenes/Jehad/Jehad_V1.27.unity) | Movement-only review capsule; additional V1.26/V1.27 fixes need reconciliation with the V1.25-based integration |
+| Integrated playable candidate | [PR #36 head — Echoheart.unity][pr36] | Editor checks; Windows RC1 (136 MB) and RC2 (131 MB, adds attack feedback) built with zero errors. The 24 Nov regression pass below covers the V1.27 merge, run control and environment colliders; no downloadable build or matching recording is linked yet |
+| Merged repository | [`798ec6b`][main-commit] | Movement/camera PR #34 is merged; inhale PR #35 (conflicts with `main` resolved 24 Nov, now mergeable) and integration PR #36 remain open |
+| Latest Jehad review checkpoint | [Jehad_V1.27.unity](../../Assets/_Project/Scenes/Jehad/Jehad_V1.27.unity) | Movement-only review capsule. Its V1.26/V1.27 fixes live in shared scripts and its scene wiring is unchanged from V1.25, so merging `main` brought them into the integration with no scene re-wiring |
 
-Repository and PR evidence was reviewed for this report. Native results below are attributed to the teammate who recorded them; this documentation update did not rerun Unity or the Windows build. Older handoff documents describe their own snapshots, so their pending flags should be read alongside the newer PR evidence here.
+Repository and PR evidence was reviewed for this report. Native results below are attributed to the teammate who recorded them. Jehad's documentation pass did not rerun Unity; Tariq's 24 November regression pass (section 5) did, on the integrated scene. Older handoff documents describe their own snapshots, so their pending flags should be read alongside the newer PR evidence here.
 
 ## 2. Playable slice summary
 
@@ -55,7 +55,7 @@ Defeating an ordinary enemy does **not** award its power: successful inhale does
 | Boss | Explicit Idle → Telegraph → Attack → Recover cycle, with Defeated handling; close slam or ranged shot, warning visuals and recovery windows | Sandbox tests plus integrated arena/Bow evidence; three human power-specific wins pending |
 | State and reset flow | `SessionFlowV13` owns Title, Playing, Paused, Dead and Complete. `RetryServiceV13` clears projectiles and performs one reset transaction; spawners own resets of their enemies | Pure flow checks and Tariq's integrated run; repeated-session regression remains |
 
-**Current gameplay controls:** WASD move, mouse orbit, Space jump, hold RMB inhale, LMB use held power, E interact, Esc pause. RMB inhale and E interact deliberately replace the Phase 1 proposal's E/F mapping. PR #36 updates the HUD/Controls page to match the production player, removing review-only sprint, middle-mouse orbit and zoom instructions.
+**Current gameplay controls:** WASD move, hold Left Shift run (1.6× speed, 6 → 9.6 m/s), mouse orbit, Space jump, hold RMB inhale, LMB use held power, E interact, Esc pause. RMB inhale and E interact deliberately replace the Phase 1 proposal's E/F mapping. PR #36 updates the HUD/Controls page to match the production player, removing the review capsule's middle-mouse orbit and zoom instructions. Run was added to the production player on 24 November after Tariq's RC playthrough found traversal of the island slow; it is a held speed modifier, not a dash, and is recorded in the design doc's controls table.
 
 ### Physics, collision and response reliability
 
@@ -63,6 +63,7 @@ Defeating an ordinary enemy does **not** award its power: successful inhale does
 - Sword uses overlap queries with a per-swing victim set; each attack has an ID, Health rejects repeated IDs, and projectiles have a resolved guard. Multiple colliders on one actor must still yield one hit.
 - Projectiles sweep between positions with `SphereCastNonAlloc`, resolve the closest valid collision and ignore owner colliders. This addresses tunneling; thin-target and crowded-collider cases remain part of integration regression rather than a claim that every physics case is covered.
 - Inhale checks sight from the body centre to prevent a mouth point inside a wall bypassing blockers. Cancelled pulls return agent ownership to the enemy brain, which re-seats the agent on navigation.
+- Environment collision was corrected in the integrated scene after the player was seen sinking into rocks. The generated landscape's separate rock cubes covered only 32–48% of each rock, trunk boxes averaged 43% of the visible trunk and were short enough to step over on hillsides, and Moonstones/snow-arch pillars had no collider. Rocks and stones now use mesh colliders from their own meshes, and trunks are sized from a knee-height slice of each tree mesh and extended in height. These are Environment-layer colliders, so the runtime enemy navigation build routes around the real shapes.
 - Teleport disables the CharacterController before moving, synchronizes physics, and invokes motion/camera reset callbacks. Reward, capture, defeat and completion paths each have once-guards. These guards define repeatable interaction semantics; Unity physics is not being claimed as cross-machine deterministic simulation.
 
 AI state diagrams, damage guards, tunables and detailed test cases are in [Muhammad's verification report](muhammad_verification.md). `BossBrain` owns boss events; a second Boss-mode health relay must not duplicate them. The player keeps one Player-mode relay, and the integration uses the existing HUD rather than stacking a second interface.
@@ -84,6 +85,7 @@ The first pass therefore includes authored content and event wiring. The remaini
 | Combat/AI — Muhammad | Unity 6000.3.27f1, `Sandbox_Muhammad`; component self-tests and `CombatPlayTest`, timeScale 2, harness-driven inputs | Health 10/10, Combat 17/17, Spawner 9/9, Boss 20/20, Boss bar 10/10; scripted run **45 passes, 0 failures** | [Verification report](muhammad_verification.md); not a first-time human playtest |
 | Player — Tariq | Movement sandbox in PR #34; dummy and real enemy checks in PR #35 | About 6 m/s walk, 1.65 m jump, 1.4 m ledge cleared; camera retracts at a wall; all three real enemy types grant their powers; wall/range rejection, release and death cancellation reported | [PR #34][pr34], [PR #35][pr35]; real-enemy checks in #35 were temporary Play-mode setups |
 | Integration — Tariq | `Echoheart.unity`, PR #36 head; Editor plus Windows RC1 | Acceptance harness pass reported; real capture/arena activation; 14 Bow hits defeat Guardian and unlock Heart; full build route includes pause, main/boss retry, completion and Play Again; zero errors reported | [PR #36][pr36]; 136 MB build reported, hardware/resolution, downloadable artifact and recording not supplied |
+| Integration regression — Tariq, 24 Nov | `Echoheart.unity` after merging `main` (V1.27) plus run and collider fixes; Editor Play mode with simulated input | Flow acceptance harness **PASSED**, 0 errors. Navigation rebuilt from 428 colliders in 47 ms; all 6 enemies on the mesh with complete paths to the player. Walk-into sweeps from four sides: rocks **0/236**, stones/pillars **0/36**, trees **0/1,348** approaches sank into the visible object; 24 early stops all traced to another rock, jetty, stone or a too-steep slope (no invisible walls). Run 6.0 → 9.6 m/s. Real Blade Beetle capture gives Sword; pause/resume; 14 Bow hits defeat the Guardian and unlock the Heart. Each Sword/Bow/Fire use plays exactly one world cue and burst; uses blocked by cooldown play none | PR #36 contract-change log; developer regression with simulated input, not a first-time human playtest |
 | World/UI policies — Jehad checkpoint | .NET 8.0.404 pure C# suites plus scene/source/asset checks | **15 suites, 9,436 assertions PASS** in the saved V1.27 report | [Validation JSON](../jehad/versions/Jehad_V1.27.validation.json); excludes Unity compilation, rendering, native input/physics and audible mix |
 
 Muhammad's boss timings—Sword 2.7 s, Bow 6.8 s, Fire 5.2 s—are ideal scripted game-time results with a pinned, kept-alive player, not human completion times. They motivated Bow cooldown **0.6 → 0.5 s**; Fire speed changed **20 → 14** to distinguish the shorter-range attack. Recheck asset tuning after real wins. An earlier scripted run's three wait-timing failures were corrected in the test harness; the report records the subsequent 45/0 run.
@@ -98,8 +100,11 @@ P1 blocks completion; P2 affects clarity, feel or required evidence; P3 is polis
 | C02 · P1 | Runtime UI panels/icons were invisible and produced raycast errors | Explicit `CanvasRenderer` requirement; verify title, HUD, bars and buttons on a fresh clone/build | Fixed and reported retested in #36; awaiting merge |
 | C03 · P1 | Runtime actor feedback creation threw during MaterialPropertyBlock field initialization | Create it lazily; repeat hit/capture/defeat effects without exceptions | Fixed and reported retested in #36; awaiting merge |
 | C04 · P1 | Inhale could bypass a wall when its mouth origin entered the wall | Body-centre line-of-sight check; repeat flush-wall, release, death and out-of-range cases | Tariq; fix/checks reported in #35 |
-| C05 · P2 | Integrated scene is V1.25-based; later pause/pickup corrections are outside that scene snapshot | Reconcile V1.26 counter refresh and V1.27 deferred pickup feedback with #36's fixes; immediately pause on collection, check count, resume once, confirm one cue | Jehad + Tariq; source fixes in checkpoints, integrated native retest pending |
+| C05 · P2 | Integrated scene is V1.25-based; later pause/pickup corrections are outside that scene snapshot | Reconcile V1.26 counter refresh and V1.27 deferred pickup feedback with #36's fixes; immediately pause on collection, check count, resume once, confirm one cue | Jehad + Tariq; `main` merged into #36 on 24 Nov and flow acceptance re-passed; the immediate-pause relic count and single-cue check is still to be done by hand |
 | C06 · P2 | Production controls differed from review hints | Use RMB/LMB hints and mouse orbit; test the Controls page and first capture without verbal explanation | Updated in #36; outside-usability retest pending |
+| C08 · P2 | Player visibly sank into rocks (seen in RC playthrough); trunks could be partly walked into, and stepped over on hillsides; Moonstones/arch pillars had no collision | Mesh colliders on rocks/stones; trunk boxes sized from the mesh and made taller; sweep every rock/stone and a four-direction approach to all 337 trees, and confirm no invisible walls | Tariq; fixed and retested in #36 (0 sink-ins). Jehad's landscape generator still produces the old boxes, so a regenerated landscape needs the same fix |
+| C09 · P3 | Attacks had no sound or effect: the attack events were not bound to world feedback and the ability assets carry no cue | Bind `SwordAttack` swing and `ProjectileAttack` fire events to `WorldFeedbackV15`; one cue per accepted attack, none during cooldown | Tariq; fixed and retested in #36; audible listening pass still in #18 |
+| C10 · P3 | Crossing the island at walking speed felt slow in the RC playthrough | Held Left Shift run (1.6×); HUD hint and Controls page updated | Tariq; added in #36; outside testers to judge speed |
 | C07 · P2 | Representative usability, audible mix and build profiling evidence are incomplete | Run the protocol below, audit SFX ownership/volume and capture the same busy workload before/after one measured optimization | Jehad organizes; Tariq builds; Muhammad profiles; open #21/#22 |
 
 These are documented observations or explicit verification gaps. Route confusion, frame-rate drops and power imbalance are test hypotheses until observed in the representative build.
@@ -127,10 +132,10 @@ The public [repository Projects view][projects] currently shows **no linked proj
 |---|---|---|
 | Core, combat, AI, graybox actors | Closed #1, #4–#9 and #19; merged #24–#32 | Completed subsystem implementation and recorded sandbox verification; retain integrated regression checks |
 | Movement/camera | Closed #2; merged #34 | Completed implementation; movement/camera feel remains in usability pass |
-| Inhale/power holder | Open #3; open #35 | Review/Test candidate; merge after teammate acceptance |
+| Inhale/power holder | Open #3; open #35 | Review/Test candidate; conflicts with `main` resolved 24 Nov; merge after teammate acceptance, before #36 |
 | World, rewards, fall recovery, flow and ending | Open #10–#16 despite implementation in Jehad checkpoints | Reconcile issue acceptance with integrated native results; do not equate code delivery with issue closure |
 | HUD/audio | Open #17/#18; TMP support PR #33 open | Current Jehad HUD/audio supplied; finish clean-clone resource checks, controls/readability and mix validation before closure |
-| Scene/build integration | Open #20; open #36 | Windows RC1 reported; review, merge, attach build and rerun acceptance from the merged revision |
+| Scene/build integration | Open #20; open #36 | Windows RC1/RC2 built; V1.27 merged in and regression pass recorded; review, merge, attach build and rerun acceptance from the merged revision |
 | Test/profiling/submission evidence | Open #21–#23 | Three testers, native profiler comparison, board evidence, video and tagged build remain delivery gates; this file supplies the checkpoint portion of #23 |
 
 Some Jehad checkpoints were delivered directly to `main`; those commits are implementation history rather than teammate PR-review evidence. The integration PR has no submitted review in the inspected snapshot. Teammate review, issue acceptance and board/milestone reconciliation remain explicit production tasks. This documentation update does not merge feature PRs, move cards or close umbrella issue #23.
@@ -138,7 +143,7 @@ Some Jehad checkpoints were delivered directly to `main`; those commits are impl
 ### Carry-over sequence and Phase 3 readiness
 
 - **Tariq + reviewer:** accept #35/#36 and resolve TMP resources where used; validate a fresh clone, one player/HUD/AudioListener/EventSystem, real input and both retry scopes. Keep new scene work on the integrated `Echoheart.unity` baseline.
-- **Jehad + Tariq:** reconcile V1.26/V1.27 changes with the integration rather than replacing it with the review-capsule scene. Retest relic/chest persistence, pause timing, prompts and one-time completion.
+- **Jehad + Tariq:** V1.26/V1.27 are now merged into the integration (not replaced by the review-capsule scene). Retest relic/chest persistence, pause timing, prompts and one-time completion by hand, and base any further world edits on `Echoheart.unity` so the collider fixes are kept.
 - **Jehad + all:** execute #21's three-tester session, triage observations and document retests. Keep the two-area/three-power scope; trim route distractions if the measured run is too long.
 - **Muhammad + Tariq:** complete #22 on the actual Development Build. Target **60 fps at 1920×1080** on declared hardware; record CPU/GPU frame times, GC allocation and bottlenecks, then compare one focused fix under identical conditions.
 - **All:** review outstanding issue/board statuses, capture the board and gameplay evidence, and publish the matching milestone tag/Windows artifact. No published GitHub Release was present in the inspected release list.
@@ -165,7 +170,6 @@ The report has traceable source/test/PR evidence. The remaining acceptance artif
 [pr34]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/pull/34
 [pr35]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/pull/35
 [pr36]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/pull/36
-[integrated-scene]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/blob/75cd32f5c35ceaa7aaff8b13167708bdf32b2b26/Assets/_Project/Scenes/Echoheart.unity
 [main-commit]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/commit/798ec6bbb2b9c0db4f3c3ab6ee4bb97fc852e43c
 [issues]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/issues
 [projects]: https://github.com/Muhammad-Jaddoua/ECHO-HEART/projects

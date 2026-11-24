@@ -22,6 +22,7 @@ namespace Echoheart.Player
         private InputAction _inhale;
         private InputAction _interact;
         private InputAction _pause;
+        private InputAction _sprint;
         private float _jumpPressedAt = float.NegativeInfinity;
 
         public Vector2 Move => _move.ReadValue<Vector2>();
@@ -30,6 +31,7 @@ namespace Echoheart.Player
         public bool LookIsGamepad => _look.activeControl?.device is Gamepad;
         public bool AttackPressed => _attack.WasPressedThisFrame();
         public bool InhaleHeld => _inhale.IsPressed();
+        public bool SprintHeld => _sprint.IsPressed();
         public bool InteractPressed => _interact.WasPressedThisFrame();
         public bool PausePressed => _pause.WasPressedThisFrame();
         public bool GameplayEnabled => _map.enabled;
@@ -44,6 +46,7 @@ namespace Echoheart.Player
             _inhale = _map.FindAction("Inhale", true);
             _interact = _map.FindAction("Interact", true);
             _pause = _map.FindAction("Pause", true);
+            _sprint = _map.FindAction("Sprint", true);
         }
 
         private void OnEnable()

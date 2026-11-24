@@ -18,6 +18,8 @@ namespace Echoheart.Player
 
         [Header("Walking")]
         [SerializeField, Min(0f)] private float _moveSpeed = 6f;
+        [Tooltip("Move speed multiplier while Sprint (Left Shift) is held.")]
+        [SerializeField, Min(1f)] private float _sprintMultiplier = 1.6f;
         [SerializeField, Min(0f)] private float _acceleration = 40f;
         [SerializeField, Min(0f)] private float _deceleration = 50f;
         [Tooltip("Fraction of ground acceleration available in the air.")]
@@ -84,6 +86,12 @@ namespace Echoheart.Player
             _controller.enabled = false;
             transform.SetPositionAndRotation(position, rotation);
             _controller.enabled = true;
+            ResetMotion();
+        }
+
+        /// <summary>Clears momentum without moving. For flow code that repositions the player itself (respawn hooks).</summary>
+        public void ResetMotion()
+        {
             _horizontalVelocity = Vector3.zero;
             _verticalVelocity = 0f;
             _jumpedSinceGrounded = false;
@@ -102,7 +110,8 @@ namespace Echoheart.Player
 
         private void UpdateHorizontal(float dt)
         {
-            Vector3 desired = _movementLocked ? Vector3.zero : CameraRelative(_input.Move) * _moveSpeed;
+            float speed = _input.SprintHeld ? _moveSpeed * _sprintMultiplier : _moveSpeed;
+            Vector3 desired = _movementLocked ? Vector3.zero : CameraRelative(_input.Move) * speed;
 
             float rate = desired.sqrMagnitude > 0.0001f ? _acceleration : _deceleration;
             if (!IsGrounded) rate *= _airControl;

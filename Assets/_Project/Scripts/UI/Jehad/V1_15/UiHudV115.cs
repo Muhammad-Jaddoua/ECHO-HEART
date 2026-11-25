@@ -8,7 +8,7 @@ namespace Echoheart.UI
     public sealed class UiHudV115
     {
         private readonly RectTransform _root,_healthFill,_healthTrail,_relicFill,_bossFill,_bossTrail,_boss,_prompt,_crosshair,_objectiveCard,_controls;
-        private readonly RectTransform _powerSlot,_pauseShortcut;
+        private readonly RectTransform _powerSlot;
         private readonly RectTransform[] _clusters;
         private readonly Text _healthText,_healthLabel,_powerText,_powerHint,_relicText,_bossText,_objective,_promptText,_key;
         private readonly UiGlyphV16 _powerIcon;
@@ -16,7 +16,7 @@ namespace Echoheart.UI
         private readonly HealthBarV115 _vital=new HealthBarV115(),_guardian=new HealthBarV115();
         private float _relicPulse;
         private bool _bossVisible,_ranged,_reduceMotion;
-        public UiHudV115(UiFactoryV17 ui,RectTransform parent,Action pause)
+        public UiHudV115(UiFactoryV17 ui,RectTransform parent)
         {
             _root=ui.Rect("HUD",parent,0,0,1600,900,new Vector2(.5f,.5f));
             var vital=ui.Panel("Vitality",_root,24,-24,300,92,UiFactoryV17.Forest);
@@ -39,9 +39,6 @@ namespace Echoheart.UI
             _objectiveCard=ui.Panel("Current objective",_root,-24,-122,330,104,UiFactoryV17.Forest,new Vector2(1,1));
             ui.Label(_objectiveCard,"YOUR NEXT STEP",18,-13,290,22,14,UiFactoryV17.Mint,true);
             _objective=ui.Label(_objectiveCard,"Follow the trails to the Guardian",18,-44,294,50,21,UiFactoryV17.Cream);
-            var pauseRoot=ui.Rect("Pause shortcut",_root,-24,-242,146,50,new Vector2(1,1));Button pauseButton=ui.Button(pauseRoot,"Pause",0,0,146,pause,false,50);
-            pauseButton.navigation=new Navigation{mode=Navigation.Mode.None};pauseButton.GetComponent<UiFocusV16>().MouseSelects=false;
-            _pauseShortcut=pauseRoot;
             _boss=ui.Panel("Guardian health",_root,0,-24,580,82,UiFactoryV17.Forest,new Vector2(.5f,1));
             ui.Label(_boss,"CORRUPTED GUARDIAN",22,-13,430,27,19,UiFactoryV17.Cream,true);
             _bossText=ui.Label(_boss,"",446,-13,112,27,18,UiFactoryV17.Muted,false,TextAnchor.UpperRight);
@@ -53,7 +50,7 @@ namespace Echoheart.UI
             _promptText=ui.Label(_prompt,"",70,-4,558,58,24,UiFactoryV17.Cream,true,TextAnchor.MiddleLeft);
             _controls=ui.Panel("Exploration hints",_root,24,24,1000,42,UiFactoryV17.Forest,new Vector2(0,0));ui.Label(_controls,"WASD  Move     Shift  Run     Space  Jump     Hold RMB  Inhale     LMB  Use power     E  Interact     Esc  Pause",15,-1,970,40,17,UiFactoryV17.Muted,false,TextAnchor.MiddleLeft);
             _crosshair=ui.Rect("Ranged aim",_root,0,0,18,18,new Vector2(.5f,.5f));ui.Icon(_crosshair,UiGlyphKindV16.None,0,0,18,UiFactoryV17.Cream);
-            _clusters=new[]{vital,power,relic,_objectiveCard,pauseRoot,_boss,_prompt,_controls};
+            _clusters=new[]{vital,power,relic,_objectiveCard,_boss,_prompt,_controls};
             _boss.gameObject.SetActive(false);_prompt.gameObject.SetActive(false);_crosshair.gameObject.SetActive(false);
         }
         public void State(GameState state,UiValuesV16 values) { _vital.Snap();_guardian.Snap();_root.gameObject.SetActive(state==GameState.Playing);Apply(values); }
@@ -70,7 +67,6 @@ namespace Echoheart.UI
             foreach(RectTransform rect in _clusters)rect.localScale=Vector3.one*values.HudScale;
             _powerSlot.anchoredPosition=new Vector2(24,-(38+92*values.HudScale));
             _objectiveCard.anchoredPosition=new Vector2(-24,-(40+82*values.HudScale));
-            _pauseShortcut.anchoredPosition=new Vector2(-24,-(values.Hints?56+186*values.HudScale:40+82*values.HudScale));
             _objectiveCard.gameObject.SetActive(values.Hints);_controls.gameObject.SetActive(values.Hints);
             _crosshair.gameObject.SetActive(values.Crosshair&&_ranged);_boss.gameObject.SetActive(_bossVisible);
         }

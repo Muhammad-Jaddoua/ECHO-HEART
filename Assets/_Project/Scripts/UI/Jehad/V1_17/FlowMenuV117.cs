@@ -59,7 +59,7 @@ namespace Echoheart.UI
             var scaler=go.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution=new Vector2(1600,900);scaler.screenMatchMode=CanvasScaler.ScreenMatchMode.Expand;
             _safe=_ui.Stretch("Safe interface",go.transform);_safe.gameObject.AddComponent<UiCancelV117>().Bind(this);
-            _hud=new UiHudV115(_ui,_safe,()=>_flow.Pause());
+            _hud=new UiHudV115(_ui,_safe);
             _overlay=_ui.Stretch("Menu overlay",_safe);_shade=_ui.Paint(_overlay,new Color(.004f,.025f,.02f,.48f),0,true);
             _fade=_overlay.gameObject.AddComponent<CanvasGroup>();_pages=_ui.Stretch("Menu pages",_overlay);
             _views=new MenuScreensV117(_ui,_pages,_overlay,this,_settings);
